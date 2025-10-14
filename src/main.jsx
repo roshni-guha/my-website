@@ -1,14 +1,18 @@
-// After
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
+import './index.css';
+import React from 'react';
+import { createRoot, createElement } from 'react-dom/client'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <h1>Hello React!</h1>
-);
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <h1>Hello World!</h1>
+// );
 
-class Car {
-  constructor(name) {
-    this.brand = name;
-  }
+function Car() {
+  return (
+    <h2>Hi, I am a Car!</h2>
+  );
 }
 
-const mycar = new Car("Ford");
+createRoot(document.getElementById('root')).render(
+  <Car />
+);
