@@ -8,3 +8,7 @@
 - map() lets you create arrays 
 
  
+ **Resume page** 
+
+ - Connected to local file directory
+ - Uses React-pdf to display the pdf

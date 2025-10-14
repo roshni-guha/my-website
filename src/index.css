@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Consolas', 'Courier New', monospace;
+  font-family: 'Times New Roman', 'Courier New', monospace;
   line-height: 1.5;
   font-weight: 400;
 
@@ -25,9 +25,12 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+  text-align: center;
 }
 
 h1 {
