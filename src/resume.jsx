@@ -17,7 +17,7 @@ function Resume() {
     <div style={{ padding: '20px' }}>
       <h1>My Resume</h1>
       <Document
-        file="Guha_Roshni_Resume.pdf"
+        file="/Guha_Roshni_Resume.pdf"
         onLoadSuccess={onDocumentLoadSuccess}
       >
         {Array.from(new Array(numPages), (_, index) => (
