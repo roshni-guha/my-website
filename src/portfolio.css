@@ -1,0 +1,225 @@
+.portfolio-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.portfolio-container h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.8em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ffffff 0%, #a8b3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.experiences-section {
+  margin-bottom: 40px;
+}
+
+.experiences-section h2 {
+  font-size: 1.6em;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  position: relative;
+  padding-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.experiences-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #646cff 0%, transparent 100%);
+  border-radius: 2px;
+}
+
+.experiences-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+.experience-card {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 28px 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #646cff 0%, #535bf2 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(100, 108, 255, 0.15);
+  border-color: #646cff;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+.experience-header {
+  margin-bottom: 10px;
+}
+
+.experience-header h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.35em;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.company {
+  font-size: 1.05em;
+  font-weight: 500;
+  color: #8b93ff;
+  display: block;
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .company {
+  color: #5157d6;
+}
+
+.period {
+  display: inline-block;
+  font-size: 0.88em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+
+.description {
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 16px 0;
+  font-size: 0.98em;
+  font-weight: 400;
+  white-space: pre-line;
+  transition: color 0.3s ease;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.tech-tag {
+  background: rgba(100, 108, 255, 0.08);
+  border: 1px solid rgba(100, 108, 255, 0.3);
+  color: #a8b3ff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.82em;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  letter-spacing: 0.2px;
+}
+
+[data-theme="light"] .tech-tag {
+  background: rgba(81, 87, 214, 0.1);
+  border: 1px solid rgba(81, 87, 214, 0.3);
+  color: #3d42b8;
+}
+
+.tech-tag:hover {
+  background: rgba(100, 108, 255, 0.15);
+  border-color: #646cff;
+  color: #c8cfff;
+  transform: translateY(-1px);
+}
+
+[data-theme="light"] .tech-tag:hover {
+  background: rgba(81, 87, 214, 0.18);
+  border-color: #5157d6;
+  color: #2a2e8f;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .portfolio-container {
+    padding: 30px 15px;
+  }
+
+  .portfolio-container h1 {
+    font-size: 2.2em;
+    margin-bottom: 35px;
+  }
+
+  .experiences-section h2 {
+    font-size: 1.4em;
+  }
+
+  .experience-card {
+    max-width: 100%;
+    padding: 24px 20px;
+  }
+
+  .experience-header h3 {
+    font-size: 1.2em;
+  }
+
+  .company {
+    font-size: 0.98em;
+  }
+
+  .description {
+    font-size: 0.93em;
+  }
+
+  .tech-tag {
+    font-size: 0.78em;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-container h1 {
+    font-size: 1.9em;
+  }
+
+  .experience-card {
+    padding: 20px 16px;
+  }
+
+  .technologies {
+    gap: 6px;
+  }
+}

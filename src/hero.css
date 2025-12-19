@@ -1,0 +1,230 @@
+/* Terminal Hero Section */
+.hero-container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle scanline effect */
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 255, 170, 0.02) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+.hero-content {
+  max-width: 700px;
+  width: 100%;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               'Liberation Mono', 'Courier New', monospace;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Terminal prompt heading */
+.terminal-heading {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #00ffaa;
+  text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+[data-theme="light"] .terminal-heading {
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+.terminal-heading::before {
+  content: '> ';
+  color: #00ffaa;
+  opacity: 0.8;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+[data-theme="light"] .terminal-heading::before {
+  color: #5157d6;
+  opacity: 1;
+}
+
+/* Blinking cursor */
+.terminal-heading::after {
+  content: '▊';
+  animation: blink 1s step-end infinite;
+  margin-left: 4px;
+  opacity: 0.8;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .terminal-heading::after {
+  color: #1a1a1a;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Description text */
+.hero-description {
+  font-size: 1.2em;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.hero-description::before {
+  content: '// ';
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.resume-link {
+  color: #00ffaa;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+
+.resume-link:hover {
+  color: #00ffaa;
+  text-decoration-thickness: 2px;
+  text-shadow: 0 0 8px rgba(0, 255, 170, 0.4);
+}
+
+[data-theme="light"] .resume-link {
+  color: #5157d6;
+  text-decoration-color: #5157d6;
+}
+
+[data-theme="light"] .resume-link:hover {
+  color: #3d42b8;
+  text-decoration-color: #3d42b8;
+  text-shadow: none;
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.social-link:hover {
+  color: #00ffaa;
+  text-shadow: 0 0 8px rgba(0, 255, 170, 0.4);
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .social-link:hover {
+  color: #5157d6;
+  text-shadow: none;
+}
+
+.social-link svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover svg {
+  filter: drop-shadow(0 0 8px rgba(0, 255, 170, 0.6));
+}
+
+[data-theme="light"] .social-link:hover svg {
+  filter: drop-shadow(0 0 4px rgba(81, 87, 214, 0.4));
+}
+
+.social-link span {
+  font-size: 0.85em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-link:hover span {
+  opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .terminal-heading {
+    font-size: 1.8em;
+  }
+
+  .hero-description {
+    font-size: 1em;
+  }
+
+  .social-links {
+    gap: 20px;
+  }
+
+  .social-link svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-heading {
+    font-size: 1.5em;
+  }
+
+  .hero-description {
+    font-size: 0.9em;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+}
