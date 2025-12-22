@@ -58,7 +58,7 @@ function Home() {
               borderRadius: '6px'
             }}
           >
-            {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+            {theme === 'dark' ? 'Light mode' : 'Dark mode'}
           </button>
         </nav>
       </header>
