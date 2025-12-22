@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Resume from './resume.jsx';
 import Portfolio from './portfolio.jsx';
 import Hero from './Hero.jsx';
 import Projects from './Projects.jsx';
@@ -43,9 +42,6 @@ function Home() {
           <div>
             <button onClick={() => setCurrentPage('home')} style={{ marginRight: '20px' }}>
               HOME
-            </button>
-            <button onClick={() => setCurrentPage('resume')} style={{ marginRight: '20px' }}>
-              RESUME
             </button>
             <button onClick={() => setCurrentPage('portfolio')} style={{ marginRight: '20px' }}>
               PORTFOLIO
