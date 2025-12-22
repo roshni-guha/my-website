@@ -1,78 +1,99 @@
+import { useState } from 'react';
 import './projects.css';
 
 function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const projects = [
     {
       id: 1,
-      title: 'AI Research Assistant',
-      description: 'AI-powered tool integrating financial APIs and sentiment analysis to automate equity research workflows.',
+      title: 'Smoking Habit Predictor',
+      description: 'Machine learning project for IIT Kanpur Machine Learning ML Certification Course.',
+      fullDescription: 'Preprocessed CSV health dataset (demographics, oral health, habits) and applied multiple ML algorithms (Decision Tree, KNN, Naïve Bayes, SVM) to classify smoking status. Compared model accuracy with and without feature scaling; achieved best performance with Support Vector Machine (≈76% accuracy) validated via 10-fold cross validation.',
+      technologies: ['Python', 'scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      githubUrl: 'https://github.com/roshni-guha/ai-research-assistant'
+      link: {
+        url: 'https://github.com/roshni-guha/smoking-or-not',
+        label: 'View on GitHub',
+        isGithub: true
+      }
     },
     {
       id: 2,
-      title: 'Portfolio Optimization Framework',
-      description: 'Momentum-based trading model for SPY with Mean-Variance Optimization framework using Python and PyTorch.',
+      title: 'UW Match',
+      description: 'Student Course Scheduling and Browsing Website for University of Wisconsin-Madison.',
+      fullDescription: 'Building a course search platform with 350+ users, featuring a 4-year planner, grade distribution, demographic breakdowns, RateMyProfessor links, AI-generated discussion summaries, prerequisite tracking, and similar course suggestions. \nLed ML integration on a 5-person team, developing recommendation models based on user interests, course popularity, and completed courses to improve personalized discovery.',
+      technologies: ['Python', 'AI APIs', 'Svelte', 'FastAPI', 'MongoDB', 'Node.js'],
       image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop',
-      githubUrl: 'https://github.com/roshni-guha/portfolio-optimization'
+      link: {
+        url: 'https://uwmatch.com',
+        label: 'Visit Website',
+        isGithub: false
+      }
     },
     {
       id: 3,
-      title: 'Data Structures Visualizer',
-      description: 'Interactive web application for visualizing common data structures and algorithms for students.',
-      image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=600&fit=crop',
-      githubUrl: 'https://github.com/roshni-guha/ds-visualizer'
+      title: 'RBC AI Research Assistant',
+      description: 'Equity Research assistant to reduce time spent by portfolio managers on research reports.',
+      fullDescription: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment feeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers. Built a functional MVP in Python/Streamlit that retrieved, summarized, and visualized multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators) within seconds, reducing manual research time by over 50%.',
+      technologies: ['Python', 'Node.js', 'Express.js', 'JavaScript', 'Yahoo Finance API', 'SEC Edgar API', 'NewsAPI', 'yfinance', 'pandas'],
+      image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=600&fit=crop',
+      link: {
+        url: 'https://github.com/roshni-guha/trading-bot',
+        label: 'View on GitHub',
+        isGithub: true
+      }
+    },
+    {
+      id: 3,
+      title: 'S&P 500 Predictor',
+      description: 'ARIMA based model to predict S&P 500 prices with on Yahoo Finance data.',
+      fullDescription: 'Participated in Google CheeseHacks 2024, collaborating with a team to utilize historical stock price data (S&P500) spanning the past decade to construct the backend of a project employing an ARIMA model. This model was designed to interpret historical data and forecast future stock prices, which were subsequently plotted for visualization purposes.',
+      technologies: ['Python', 'ARIMA', 'Yahoo Finance API', 'Matplotlib'],
+      image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=600&fit=crop',
+      link: {
+        url: 'https://github.com/roshni-guha/trading-bot',
+        label: 'View on GitHub',
+        isGithub: true
+      }
     },
     {
       id: 4,
-      title: 'Sentiment Analysis Pipeline',
-      description: 'Real-time sentiment analysis for financial news from Reddit, X, and major news sources using NLP.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-      githubUrl: 'https://github.com/roshni-guha/sentiment-pipeline'
+      title: 'Stock Visualizer for AAPL and MSFT',
+      description: 'Stock price visualizer for Apple and Microfost on Python',
+      fullDescription: 'Used historical stock data from Yahoo! Finance and displayed the 20-day Simple Moving Average prices of two stocks - Apple and Microsoft - with pointers displaying SMA-20 data at the point on the graph when clicked. Displays the stock data including the Open, Close, High, Low prices and Volume of stocks traded on a Tkinter GUI.',
+      technologies: ['Python', 'yFinance', 'Pandas', 'Matplotlib', 'Tkinter'],
+      image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=600&fit=crop',
+      link: {
+        url: 'https://github.com/roshni-guha/ds-visualizer',
+        label: 'View on GitHub',
+        isGithub: true
+      }
     },
     {
       id: 5,
-      title: 'Trading Bot',
-      description: 'Automated trading system using Interactive Brokers API with Docker containerization and cloud deployment.',
-      image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=600&fit=crop',
-      githubUrl: 'https://github.com/roshni-guha/trading-bot'
+      title: 'AI Job Assistant Chatbot',
+      description: 'AI-powered chatbot for job search assistance.',
+      fullDescription: 'Built a Python-based AI Job Assistant using OpenAI GPT-4o to extract job preferences from natural language input, validate missing details via interactive questioning, and recommend top job matches. Implemented LLM-based API integration and modular job-matching logic with secure environment and data handling.',
+      technologies: ['Python', 'Pandas', 'OpenAI API Keys'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+      link: {
+        url: 'https://github.com/roshni-guha/sentiment-pipeline',
+        label: 'View on GitHub',
+        isGithub: true
+      }
     },
-    {
-      id: 6,
-      title: 'ML Stock Predictor',
-      description: 'Reinforcement learning model for global equity prediction with feature engineering and backtesting.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      githubUrl: 'https://github.com/roshni-guha/ml-stock-predictor'
-    },
-    {
-      id: 7,
-      title: 'Financial Dashboard',
-      description: 'Real-time financial dashboard with interactive charts, market data, and portfolio tracking.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      githubUrl: 'https://github.com/roshni-guha/financial-dashboard'
-    },
-    {
-      id: 8,
-      title: 'Algorithmic Trading Simulator',
-      description: 'Backtesting platform for algorithmic trading strategies with historical market data.',
-      image: 'https://images.unsplash.com/photo-1642790595397-7047dc98fa72?w=800&h=600&fit=crop',
-      githubUrl: 'https://github.com/roshni-guha/algo-trading-sim'
-    },
-    {
-      id: 9,
-      title: 'Code Review Assistant',
-      description: 'AI-powered code review tool that analyzes pull requests and suggests improvements.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop',
-      githubUrl: 'https://github.com/roshni-guha/code-review-assistant'
-    }
   ];
 
   return (
     <div className="projects-container">
-
       <div className="projects-grid">
         {projects.map((project) => (
-          <div key={project.id} className="project-card">
+          <div
+            key={project.id}
+            className="project-card"
+            onClick={() => setSelectedProject(project)}
+          >
             <div className="project-image-wrapper">
               <img
                 src={project.image}
@@ -85,23 +106,77 @@ function Projects() {
               <h3>{project.title}</h3>
               <p className="project-description">{project.description}</p>
             </div>
-
-            <div className="project-footer">
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="github-link"
-              >
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                </svg>
-                <span>View on GitHub</span>
-              </a>
-            </div>
           </div>
         ))}
       </div>
+
+      {selectedProject && (
+        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedProject(null)}>
+              ×
+            </button>
+
+            <div className="modal-image-wrapper">
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="modal-image"
+              />
+            </div>
+
+            <div className="modal-body">
+              <h2>{selectedProject.title}</h2>
+
+              <div className="modal-section">
+                <h3>Overview</h3>
+                <p>{selectedProject.fullDescription}</p>
+              </div>
+
+              {/* <div className="modal-section">
+                <h3>Key Highlights</h3>
+                <ul className="highlights-list">
+                  {selectedProject.highlights.map((highlight, index) => (
+                    <li key={index}>{highlight}</li>
+                  ))}
+                </ul>
+              </div> */}
+
+              <div className="modal-section">
+                <h3>Technologies</h3>
+                <div className="modal-technologies">
+                  {selectedProject.technologies.map((tech, index) => (
+                    <span key={index} className="modal-tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
+
+              {selectedProject.link && (
+                <div className="modal-footer">
+                  <a
+                    href={selectedProject.link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-project-link"
+                  >
+                    {selectedProject.link.isGithub && (
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    )}
+                    {!selectedProject.link.isGithub && (
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24zm2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/>
+                      </svg>
+                    )}
+                    {selectedProject.link.label}
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
