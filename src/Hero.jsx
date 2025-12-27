@@ -3,63 +3,102 @@ import './hero.css';
 function Hero() {
   return (
     <div className="hero-container">
-      <div className="hero-content">
-        <h1 className="terminal-heading">hi, i'm roshni</h1>
+      <div className="hero-grid">
+        {/* Left Side */}
+        <div className="hero-left">
+          <h1 className="hero-title">hi, i'm roshni</h1>
 
-        <p className="hero-description">
-          UW Madison | Software Developer | Quant Researcher
-        </p>
+          <p className="hero-subtitle">
+            UW Madison | Software Developer | Quant Researcher
+          </p>
 
-        <div className="status-badge">
-          <span className="status-dot"></span>
-          SEEKING SUMMER 2026: SWE | QUANT DEV | ML/AI ROLES
+          <div className="status-banner">
+            <span className="status-dot-hero"></span>
+            <span className="status-text">SEEKING SUMMER 2026: SWE | QUANT DEV | ML/AI ROLES</span>
+          </div>
+
+          <p className="hero-bio">
+            CS + Math double major passionate about building high-performance systems at the intersection
+            of quantitative finance, machine learning, and software engineering. Experience managing $1M+
+            portfolios and developing production ML systems.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="hero-cta">
+            <a
+              href="/Guha_Roshni_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary"
+            >
+              Download Resume
+            </a>
+            <a
+              href="#projects"
+              className="cta-secondary"
+            >
+              View Projects
+            </a>
+          </div>
+
+          {/* Bottom Metrics */}
+          <div className="hero-metrics">
+            <div className="metric-card">
+              <div className="metric-icon">💰</div>
+              <div className="metric-value">$1M+</div>
+              <div className="metric-label">Portfolio Managed</div>
+            </div>
+            <div className="metric-card">
+              <div className="metric-icon">👥</div>
+              <div className="metric-value">350+</div>
+              <div className="metric-label">Active Users</div>
+            </div>
+            <div className="metric-card">
+              <div className="metric-icon">⚡</div>
+              <div className="metric-value">50%+</div>
+              <div className="metric-label">Time Saved</div>
+            </div>
+            <div className="metric-card">
+              <div className="metric-icon">🚀</div>
+              <div className="metric-value">6+</div>
+              <div className="metric-label">Live Projects</div>
+            </div>
+          </div>
         </div>
 
-        <p className="hero-bio">
-          CS + Math double major passionate about building high-performance systems at the intersection
-          of quantitative finance, machine learning, and software engineering. Experience managing $1M+
-          portfolios and developing production ML systems.
-        </p>
-
-        {/* Quick Stats */}
-        <div className="hero-stats">
-          <div className="stat-item">
-            <div className="stat-label">Class of 2027</div>
-            <div className="stat-value">CS + Math</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-label">Portfolio Managed</div>
-            <div className="stat-value">$1M+</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-label">Active Users</div>
-            <div className="stat-value">350+</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-label">Projects Live</div>
-            <div className="stat-value">6+</div>
+        {/* Right Side - Terminal Panel */}
+        <div className="hero-right">
+          <div className="terminal-panel">
+            <div className="terminal-header">┌─ SYSTEM STATUS ────────┐</div>
+            <div className="terminal-body">
+              <div className="terminal-line">
+                <span className="terminal-key">Education:</span>
+                <span className="terminal-value">CS + Math</span>
+              </div>
+              <div className="terminal-line">
+                <span className="terminal-key">Class Year:</span>
+                <span className="terminal-value">2027</span>
+              </div>
+              <div className="terminal-line">
+                <span className="terminal-key">Portfolio:</span>
+                <span className="terminal-value">$1M+</span>
+              </div>
+              <div className="terminal-line">
+                <span className="terminal-key">Projects Live:</span>
+                <span className="terminal-value">6+</span>
+              </div>
+              <div className="terminal-line">
+                <span className="terminal-key">Status:</span>
+                <span className="terminal-value terminal-recruiting">RECRUITING</span>
+              </div>
+            </div>
+            <div className="terminal-footer">└────────────────────────┘</div>
           </div>
         </div>
+      </div>
 
-        {/* CTA Buttons */}
-        <div className="hero-cta">
-          <a
-            href="/Guha_Roshni_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-primary"
-          >
-            Download Resume
-          </a>
-          <a
-            href="#projects"
-            className="cta-secondary"
-          >
-            View Projects
-          </a>
-        </div>
-
-        {/* Social Links */}
+      {/* Social Links Below */}
+      <div className="hero-social">
         <div className="social-links">
           <a
             href="https://github.com/roshni-guha"

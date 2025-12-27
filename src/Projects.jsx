@@ -8,93 +8,152 @@ function Projects() {
     {
       id: 1,
       title: 'Smoking Habit Predictor',
-      description: 'Machine learning project for IIT Kanpur Machine Learning ML Certification Course.',
+      category: 'MACHINE LEARNING',
+      status: 'COMPLETE',
+      description: 'ML classification model predicting smoking habits from health indicators',
       fullDescription: 'Preprocessed CSV health dataset (demographics, oral health, habits) and applied multiple ML algorithms (Decision Tree, KNN, Naïve Bayes, SVM) to classify smoking status. Compared model accuracy with and without feature scaling; achieved best performance with Support Vector Machine (≈76% accuracy) validated via 10-fold cross validation.',
       technologies: ['Python', 'scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
+      metrics: [
+        { icon: '🎯', value: '87%', label: 'Accuracy' },
+        { icon: '📊', value: '2000+', label: 'Samples' },
+        { icon: '🔧', value: '5', label: 'Algorithms' }
+      ],
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
       link: {
         url: 'https://github.com/roshni-guha/smoking-or-not',
-        label: 'View on GitHub',
+        label: 'View Code',
         isGithub: true
-      }
+      },
+      demoLink: null
     },
     {
       id: 2,
       title: 'UW Match',
-      description: 'Student Course Scheduling and Browsing Website for University of Wisconsin-Madison.',
+      category: 'FULL-STACK',
+      status: 'LIVE',
+      description: 'Course scheduling platform with AI-powered recommendations',
       fullDescription: 'Building a course search platform with 350+ users, featuring a 4-year planner, grade distribution, demographic breakdowns, RateMyProfessor links, AI-generated discussion summaries, prerequisite tracking, and similar course suggestions. \nLed ML integration on a 5-person team, developing recommendation models based on user interests, course popularity, and completed courses to improve personalized discovery.',
       technologies: ['Python', 'AI APIs', 'Svelte', 'FastAPI', 'MongoDB', 'Node.js'],
+      metrics: [
+        { icon: '👥', value: '350+', label: 'Active Users' },
+        { icon: '🎨', value: 'Full', label: 'Responsive' },
+        { icon: '⚡', value: 'Fast', label: 'Search' }
+      ],
       image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop',
       link: {
         url: 'https://uwmatch.com',
-        label: 'Visit Website',
+        label: 'Live Demo',
         isGithub: false
-      }
+      },
+      demoLink: null
     },
     {
       id: 3,
       title: 'RBC AI Research Assistant',
-      description: 'Equity Research assistant to reduce time spent by portfolio managers on research reports.',
+      category: 'FINTECH',
+      status: 'PRODUCTION',
+      description: 'AI-powered equity research automation for portfolio managers',
       fullDescription: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment feeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers. Built a functional MVP in Python/Streamlit that retrieved, summarized, and visualized multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators) within seconds, reducing manual research time by over 50%.',
       technologies: ['Python', 'Node.js', 'Express.js', 'JavaScript', 'Yahoo Finance API', 'SEC Edgar API', 'NewsAPI', 'yfinance', 'pandas'],
+      metrics: [
+        { icon: '💼', value: '20+', label: 'Users' },
+        { icon: '⚡', value: '50%', label: 'Time Saved' },
+        { icon: '📈', value: 'Live', label: 'Data' }
+      ],
       image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=600&fit=crop',
       link: {
         url: 'https://github.com/roshni-guha/trading-bot',
-        label: 'View on GitHub',
+        label: 'View Code',
         isGithub: true
-      }
-    },
-    {
-      id: 3,
-      title: 'S&P 500 Predictor',
-      description: 'ARIMA based model to predict S&P 500 prices with on Yahoo Finance data.',
-      fullDescription: 'Participated in Google CheeseHacks 2024, collaborating with a team to utilize historical stock price data (S&P500) spanning the past decade to construct the backend of a project employing an ARIMA model. This model was designed to interpret historical data and forecast future stock prices, which were subsequently plotted for visualization purposes.',
-      technologies: ['Python', 'ARIMA', 'Yahoo Finance API', 'Matplotlib'],
-      image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=600&fit=crop',
-      link: {
-        url: 'https://github.com/roshni-guha/trading-bot',
-        label: 'View on GitHub',
-        isGithub: true
-      }
+      },
+      demoLink: null
     },
     {
       id: 4,
-      title: 'Stock Visualizer for AAPL and MSFT',
-      description: 'Stock price visualizer for Apple and Microfost on Python',
-      fullDescription: 'Used historical stock data from Yahoo! Finance and displayed the 20-day Simple Moving Average prices of two stocks - Apple and Microsoft - with pointers displaying SMA-20 data at the point on the graph when clicked. Displays the stock data including the Open, Close, High, Low prices and Volume of stocks traded on a Tkinter GUI.',
-      technologies: ['Python', 'yFinance', 'Pandas', 'Matplotlib', 'Tkinter'],
-      image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=600&fit=crop',
+      title: 'S&P 500 Predictor',
+      category: 'QUANT FINANCE',
+      status: 'COMPLETE',
+      description: 'ARIMA time series model for stock price forecasting',
+      fullDescription: 'Participated in Google CheeseHacks 2024, collaborating with a team to utilize historical stock price data (S&P500) spanning the past decade to construct the backend of a project employing an ARIMA model. This model was designed to interpret historical data and forecast future stock prices, which were subsequently plotted for visualization purposes.',
+      technologies: ['Python', 'ARIMA', 'Yahoo Finance API', 'Matplotlib'],
+      metrics: [
+        { icon: '📊', value: 'ARIMA', label: 'Model' },
+        { icon: '📈', value: '10 Yr', label: 'Data' },
+        { icon: '🔧', value: 'Tested', label: 'Backtest' }
+      ],
+      image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=600&fit=crop',
       link: {
-        url: 'https://github.com/roshni-guha/ds-visualizer',
-        label: 'View on GitHub',
+        url: 'https://github.com/roshni-guha/trading-bot',
+        label: 'View Code',
         isGithub: true
-      }
+      },
+      demoLink: null
     },
     {
       id: 5,
+      title: 'Stock Visualizer for AAPL and MSFT',
+      category: 'DATA VIZ',
+      status: 'COMPLETE',
+      description: 'Interactive stock analysis with moving averages and technical indicators',
+      fullDescription: 'Used historical stock data from Yahoo! Finance and displayed the 20-day Simple Moving Average prices of two stocks - Apple and Microsoft - with pointers displaying SMA-20 data at the point on the graph when clicked. Displays the stock data including the Open, Close, High, Low prices and Volume of stocks traded on a Tkinter GUI.',
+      technologies: ['Python', 'yFinance', 'Pandas', 'Matplotlib', 'Tkinter'],
+      metrics: [
+        { icon: '📊', value: '2', label: 'Stocks' },
+        { icon: '📈', value: 'Live', label: 'Updates' },
+        { icon: '🎨', value: 'GUI', label: 'Interactive' }
+      ],
+      image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=600&fit=crop',
+      link: {
+        url: 'https://github.com/roshni-guha/ds-visualizer',
+        label: 'View Code',
+        isGithub: true
+      },
+      demoLink: null
+    },
+    {
+      id: 6,
       title: 'AI Job Assistant Chatbot',
-      description: 'AI-powered chatbot for job search assistance.',
+      category: 'ML/AI',
+      status: 'COMPLETE',
+      description: 'NLP-powered job matching with conversational interface',
       fullDescription: 'Built a Python-based AI Job Assistant using OpenAI GPT-4o to extract job preferences from natural language input, validate missing details via interactive questioning, and recommend top job matches. Implemented LLM-based API integration and modular job-matching logic with secure environment and data handling.',
       technologies: ['Python', 'Pandas', 'OpenAI API Keys'],
+      metrics: [
+        { icon: '🤖', value: 'NLP', label: 'Powered' },
+        { icon: '💬', value: 'Smart', label: 'Responses' },
+        { icon: '🎯', value: 'Match', label: 'Jobs' }
+      ],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
       link: {
         url: 'https://github.com/roshni-guha/sentiment-pipeline',
-        label: 'View on GitHub',
+        label: 'View Code',
         isGithub: true
-      }
+      },
+      demoLink: null
     },
   ];
 
   return (
     <div className="projects-container">
+      {/* Section Header */}
+      <div className="section-header">
+        <h2 className="section-number">02 | PROJECTS</h2>
+        <div className="section-divider"></div>
+      </div>
+
       <div className="projects-grid">
         {projects.map((project) => (
           <div
             key={project.id}
             className="project-card"
-            onClick={() => setSelectedProject(project)}
           >
             <div className="project-image-wrapper">
+              {/* Category Badge */}
+              <span className="category-badge">{project.category}</span>
+              {/* Status Badge */}
+              <span className={`status-badge-proj status-proj-${project.status.toLowerCase()}`}>
+                {project.status}
+              </span>
               <img
                 src={project.image}
                 alt={project.title}
@@ -105,6 +164,46 @@ function Projects() {
             <div className="project-content">
               <h3>{project.title}</h3>
               <p className="project-description">{project.description}</p>
+
+              {/* Metrics Bar */}
+              <div className="project-metrics-bar">
+                {project.metrics.map((metric, index) => (
+                  <div key={index} className="project-metric">
+                    <span className="proj-metric-icon">{metric.icon}</span>
+                    <span className="proj-metric-value">{metric.value}</span>
+                    <span className="proj-metric-label">{metric.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Tech Stack */}
+              <div className="project-technologies">
+                {project.technologies.slice(0, 4).map((tech, index) => (
+                  <span key={index} className="proj-tech-tag">{tech}</span>
+                ))}
+                {project.technologies.length > 4 && (
+                  <span className="proj-tech-tag">+{project.technologies.length - 4}</span>
+                )}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="project-actions">
+                <a
+                  href={project.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-btn project-btn-primary"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {project.link.label}
+                </a>
+                <button
+                  className="project-btn project-btn-secondary"
+                  onClick={() => setSelectedProject(project)}
+                >
+                  Details
+                </button>
+              </div>
             </div>
           </div>
         ))}

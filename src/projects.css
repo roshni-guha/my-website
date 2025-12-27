@@ -64,6 +64,74 @@
   transition: background-color 0.3s ease;
 }
 
+/* Category Badge */
+.category-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 255, 65, 0.15);
+  border: 1px solid #00ff41;
+  color: #00ff41;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  z-index: 2;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .category-badge {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+/* Status Badge for Projects */
+.status-badge-proj {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  z-index: 2;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  backdrop-filter: blur(8px);
+}
+
+.status-proj-live {
+  background: rgba(0, 255, 65, 0.2);
+  border: 1px solid #00ff41;
+  color: #00ff41;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.status-proj-production {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+}
+
+.status-proj-complete {
+  background: rgba(139, 147, 255, 0.2);
+  border: 1px solid #8b93ff;
+  color: #8b93ff;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 65, 0.6);
+  }
+}
+
 .project-image {
   width: 100%;
   height: 100%;
@@ -98,17 +166,140 @@
 }
 
 .project-description {
-  flex: 1;
   line-height: 1.7;
   color: var(--text-muted);
   font-size: 0.95em;
-  margin: 0;
+  margin: 0 0 16px 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-family: 'Inter', sans-serif;
   transition: color 0.3s ease;
+}
+
+/* Project Metrics Bar */
+.project-metrics-bar {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-metric {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85em;
+}
+
+.proj-metric-icon {
+  font-size: 1.1em;
+}
+
+.proj-metric-value {
+  font-weight: 700;
+  color: #00ff41;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+[data-theme="light"] .proj-metric-value {
+  color: #3b82f6;
+}
+
+.proj-metric-label {
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+/* Project Technologies */
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.proj-tech-tag {
+  background: rgba(100, 108, 255, 0.08);
+  border: 1px solid rgba(100, 108, 255, 0.3);
+  color: #a8b3ff;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 0.75em;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+[data-theme="light"] .proj-tech-tag {
+  background: rgba(81, 87, 214, 0.1);
+  border-color: rgba(81, 87, 214, 0.3);
+  color: #3d42b8;
+}
+
+.proj-tech-tag:hover {
+  background: rgba(100, 108, 255, 0.15);
+  border-color: #646cff;
+  color: #c8cfff;
+  transform: translateY(-1px);
+}
+
+/* Project Action Buttons */
+.project-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.project-btn {
+  flex: 1;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+.project-btn-primary {
+  background: #3b82f6;
+  color: white;
+  border: 2px solid #3b82f6;
+}
+
+.project-btn-primary:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.project-btn-secondary {
+  background: transparent;
+  color: #00ff41;
+  border: 2px solid #00ff41;
+}
+
+.project-btn-secondary:hover {
+  background: rgba(0, 255, 65, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 255, 65, 0.3);
+}
+
+[data-theme="light"] .project-btn-secondary {
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+[data-theme="light"] .project-btn-secondary:hover {
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
 /* Project Footer with GitHub Link */
