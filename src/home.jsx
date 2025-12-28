@@ -130,7 +130,7 @@ function Home() {
                 transition: 'all 0.3s ease'
               }}
             >
-              {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+              {theme === 'dark' ? '# Light' : '$ Dark'}
             </button>
           </div>
         </nav>
