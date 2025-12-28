@@ -15,9 +15,9 @@ function Portfolio() {
       description: 'Support development of strategies for managing a portfolio of $1M+ as a part of a student-managed CapitalFund Investment Team using Interactive Brokers, Docker and automated trading tools.\nBuild and refine the production tech stack and data flow, transforming Model State into Aggregate Optimized Positions for live portfolio execution. \nDeveloped model prototypes, including a momentum-based model for SPY with an MVO framework and a reinforcement learning model for global equities, as part of the team\'s systematic strategy research.',
       technologies: ['Python', 'Google Cloud Shell', 'Excel', 'Interactive Brokers', 'Docker', 'PyTorch'],
       metrics: [
-        { icon: '💰', value: '$1M+', label: 'Portfolio Managed' },
-        { icon: '⚡', value: '50%+', label: 'Research Efficiency' },
-        { icon: '🤖', value: 'Live', label: 'Trading System' }
+        { value: '$1M+', label: 'Portfolio Managed' },
+        { value: '50%+', label: 'Research Efficiency' },
+        { value: 'Live', label: 'Trading System' }
       ]
     },
     {
@@ -29,9 +29,9 @@ function Portfolio() {
       description: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment\nfeeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers.\nBuilding a functional MVP in Python/Streamlit that retrieves, summarizes, and visualizes multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators), reducing manual research time by over 50%.',
       technologies: ['Python', 'JavaScript', 'HTML', 'LLM API', 'Yahoo Finance', 'Data Scraping', 'Sentiment Analysis'],
       metrics: [
-        { icon: '👥', value: '20+', label: 'Portfolio Managers' },
-        { icon: '⚡', value: '50%', label: 'Time Saved' },
-        { icon: '🔍', value: 'Multi', label: 'Source Analysis' }
+        { value: '20+', label: 'Portfolio Managers' },
+        { value: '50%', label: 'Time Saved' },
+        { value: 'Multi', label: 'Source Analysis' }
       ]
     },
     {
@@ -43,9 +43,9 @@ function Portfolio() {
       description: 'Help 600+ students understand object-oriented programming, data structures, recursion, and algorithm complexity during office hours and support development of debugging skills during the development of complex weekly projects.\nPromoted after mentoring Programming I class over the summer, leading 4 labs and office hours for 45+ students with\nminimal programming experience in concepts such as control flow, data types, functions and debugging',
       technologies: ['Mentoring', 'Teaching', 'Debugging', 'Algorithm Design', 'Data Structures'],
       metrics: [
-        { icon: '👥', value: '600+', label: 'Students Helped' },
-        { icon: '📚', value: '4', label: 'Weekly Labs' },
-        { icon: '⭐', value: 'Promoted', label: 'After Summer' }
+        { value: '600+', label: 'Students Helped' },
+        { value: '4', label: 'Weekly Labs' },
+        { value: 'Promoted', label: 'After Summer' }
       ]
     },
     {
@@ -57,9 +57,9 @@ function Portfolio() {
       description: 'Assisted senior analysts in compiling and interpreting payment, working capital, and tender data, improving reporting workflows and reducing turnaround times by ~20%, supported by SQL knowledge gained through prior training.',
       technologies: ['Data Analysis', 'Excel', 'SQL', 'Data Visualization'],
       metrics: [
-        { icon: '⚡', value: '20%', label: 'Faster Reporting' },
-        { icon: '📊', value: 'SQL', label: 'Data Analysis' },
-        { icon: '🏢', value: 'Dubai', label: 'UAE' }
+        { value: '20%', label: 'Faster Reporting' },
+        { value: 'SQL', label: 'Data Analysis' },
+        { value: 'Dubai', label: 'UAE' }
       ]
     },
   ];
@@ -215,7 +215,6 @@ function Portfolio() {
                   <div className="metrics-grid">
                     {experience.metrics.map((metric, index) => (
                       <div key={index} className="metric-item">
-                        <span className="metric-icon">{metric.icon}</span>
                         <span className="metric-value">{metric.value}</span>
                         <span className="metric-label">{metric.label}</span>
                       </div>
@@ -240,6 +239,10 @@ function Portfolio() {
       {/* Certifications Section */}
       {activeSection === 'certifications' && (
         <section className="experiences-section">
+          <div className="section-header">
+            <h2 className="section-number">02 | CERTIFICATIONS</h2>
+            <div className="section-divider"></div>
+          </div>
           <div className="experiences-scroll">
             {certifications.map((cert) => (
               <div key={cert.id} className="experience-card">
@@ -269,6 +272,10 @@ function Portfolio() {
       {/* Awards Section */}
       {activeSection === 'awards' && (
         <section className="experiences-section">
+          <div className="section-header">
+            <h2 className="section-number">03 | AWARDS</h2>
+            <div className="section-divider"></div>
+          </div>
           <div className="experiences-scroll">
             {awards.map((award) => (
               <div key={award.id} className="experience-card">
@@ -312,12 +319,18 @@ function Portfolio() {
       {/* Extracurricular/Academics Section */}
       {activeSection === 'extracurricular' && (
         <section className="experiences-section">
+          <div className="section-header">
+            <h2 className="section-number">04 | EXTRACURRICULAR</h2>
+            <div className="section-divider"></div>
+          </div>
           <div className="experiences-scroll">
             {extracurricular.map((item) => (
               <div key={item.id} className="experience-card">
                 <div className="experience-header">
                   <h3>{item.title}</h3>
-                  <span className="company">{item.category}</span>
+                  <span className="status-badge-exp status-category">
+                    {item.category}
+                  </span>
                 </div>
                 <span className="period">{item.period}</span>
                 <p className="description">{item.description}</p>

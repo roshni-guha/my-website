@@ -14,9 +14,9 @@ function Projects() {
       fullDescription: 'Preprocessed CSV health dataset (demographics, oral health, habits) and applied multiple ML algorithms (Decision Tree, KNN, Naïve Bayes, SVM) to classify smoking status. Compared model accuracy with and without feature scaling; achieved best performance with Support Vector Machine (≈76% accuracy) validated via 10-fold cross validation.',
       technologies: ['Python', 'scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
       metrics: [
-        { icon: '🎯', value: '87%', label: 'Accuracy' },
-        { icon: '📊', value: '2000+', label: 'Samples' },
-        { icon: '🔧', value: '5', label: 'Algorithms' }
+        { icon: '▸', value: '87%', label: 'Accuracy' },
+        { icon: '#', value: '2000+', label: 'Samples' },
+        { icon: '*', value: '5', label: 'Algorithms' }
       ],
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
       link: {
@@ -35,8 +35,8 @@ function Projects() {
       fullDescription: 'Building a course search platform with 350+ users, featuring a 4-year planner, grade distribution, demographic breakdowns, RateMyProfessor links, AI-generated discussion summaries, prerequisite tracking, and similar course suggestions. \nLed ML integration on a 5-person team, developing recommendation models based on user interests, course popularity, and completed courses to improve personalized discovery.',
       technologies: ['Python', 'AI APIs', 'Svelte', 'FastAPI', 'MongoDB', 'Node.js'],
       metrics: [
-        { icon: '👥', value: '350+', label: 'Active Users' },
-        { icon: '🎨', value: 'Full', label: 'Responsive' },
+        { icon: '#', value: '350+', label: 'Users' },
+        { icon: '▸', value: 'Full', label: 'Responsive' },
         { icon: '⚡', value: 'Fast', label: 'Search' }
       ],
       image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop',
@@ -50,15 +50,15 @@ function Projects() {
     {
       id: 3,
       title: 'RBC AI Research Assistant',
-      category: 'FINTECH',
+      category: 'ML/AI',
       status: 'PRODUCTION',
       description: 'AI-powered equity research automation for portfolio managers',
       fullDescription: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment feeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers. Built a functional MVP in Python/Streamlit that retrieved, summarized, and visualized multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators) within seconds, reducing manual research time by over 50%.',
       technologies: ['Python', 'Node.js', 'Express.js', 'JavaScript', 'Yahoo Finance API', 'SEC Edgar API', 'NewsAPI', 'yfinance', 'pandas'],
       metrics: [
-        { icon: '💼', value: '20+', label: 'Users' },
-        { icon: '⚡', value: '50%', label: 'Time Saved' },
-        { icon: '📈', value: 'Live', label: 'Data' }
+        { icon: '#', value: '20+', label: 'Users' },
+        { icon: '⚡', value: '50%', label: 'Faster' },
+        { icon: '>', value: 'AI', label: 'Powered Analysis' }
       ],
       image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=600&fit=crop',
       link: {
@@ -77,9 +77,9 @@ function Projects() {
       fullDescription: 'Participated in Google CheeseHacks 2024, collaborating with a team to utilize historical stock price data (S&P500) spanning the past decade to construct the backend of a project employing an ARIMA model. This model was designed to interpret historical data and forecast future stock prices, which were subsequently plotted for visualization purposes.',
       technologies: ['Python', 'ARIMA', 'Yahoo Finance API', 'Matplotlib'],
       metrics: [
-        { icon: '📊', value: 'ARIMA', label: 'Model' },
-        { icon: '📈', value: '10 Yr', label: 'Data' },
-        { icon: '🔧', value: 'Tested', label: 'Backtest' }
+        { icon: '$', value: 'ARIMA', label: 'Model' },
+        { icon: '#', value: '10 Yr', label: 'Data' },
+        { icon: '✓', value: 'Tested', label: 'Backtest' }
       ],
       image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=600&fit=crop',
       link: {
@@ -98,9 +98,9 @@ function Projects() {
       fullDescription: 'Used historical stock data from Yahoo! Finance and displayed the 20-day Simple Moving Average prices of two stocks - Apple and Microsoft - with pointers displaying SMA-20 data at the point on the graph when clicked. Displays the stock data including the Open, Close, High, Low prices and Volume of stocks traded on a Tkinter GUI.',
       technologies: ['Python', 'yFinance', 'Pandas', 'Matplotlib', 'Tkinter'],
       metrics: [
-        { icon: '📊', value: '2', label: 'Stocks' },
-        { icon: '📈', value: 'Live', label: 'Updates' },
-        { icon: '🎨', value: 'GUI', label: 'Interactive' }
+        { icon: '#', value: '2', label: 'Stocks' },
+        { icon: '⚡', value: 'Live', label: 'Updates' },
+        { icon: '▸', value: 'GUI', label: 'Interactive' }
       ],
       image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=600&fit=crop',
       link: {
@@ -119,9 +119,9 @@ function Projects() {
       fullDescription: 'Built a Python-based AI Job Assistant using OpenAI GPT-4o to extract job preferences from natural language input, validate missing details via interactive questioning, and recommend top job matches. Implemented LLM-based API integration and modular job-matching logic with secure environment and data handling.',
       technologies: ['Python', 'Pandas', 'OpenAI API Keys'],
       metrics: [
-        { icon: '🤖', value: 'NLP', label: 'Powered' },
-        { icon: '💬', value: 'Smart', label: 'Responses' },
-        { icon: '🎯', value: 'Match', label: 'Jobs' }
+        { icon: '>', value: 'NLP', label: 'Powered' },
+        { icon: '*', value: 'Smart', label: 'Responses' },
+        { icon: '▸', value: 'Match', label: 'Jobs' }
       ],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
       link: {
@@ -137,7 +137,7 @@ function Projects() {
     <div className="projects-container">
       {/* Section Header */}
       <div className="section-header">
-        <h2 className="section-number">02 | PROJECTS</h2>
+        <h2 className="section-number">PROJECTS</h2>
         <div className="section-divider"></div>
       </div>
 
@@ -148,17 +148,21 @@ function Projects() {
             className="project-card"
           >
             <div className="project-image-wrapper">
-              {/* Category Badge */}
-              <span className="category-badge">{project.category}</span>
-              {/* Status Badge */}
-              <span className={`status-badge-proj status-proj-${project.status.toLowerCase()}`}>
-                {project.status}
-              </span>
               <img
                 src={project.image}
                 alt={project.title}
                 className="project-image"
               />
+            </div>
+
+            {/* Badges below image */}
+            <div className="project-badges">
+              <span className={`category-badge category-${project.category.toLowerCase().replace(/\//g, '-').replace(/\s+/g, '-')}`}>
+                {project.category}
+              </span>
+              <span className={`status-badge-proj status-proj-${project.status.toLowerCase()}`}>
+                {project.status}
+              </span>
             </div>
 
             <div className="project-content">

@@ -9,13 +9,9 @@ function Hero() {
           <h1 className="hero-title">hi, i'm roshni</h1>
 
           <p className="hero-subtitle">
-            UW Madison | Software Developer | Quant Researcher
+            UW Madison | Software Developer | ML/AI Researcher | Quant
           </p>
 
-          <div className="status-banner">
-            <span className="status-dot-hero"></span>
-            <span className="status-text">SEEKING SUMMER 2026: SWE | QUANT DEV | ML/AI ROLES</span>
-          </div>
 
           <p className="hero-bio">
             CS + Math double major passionate about building high-performance systems at the intersection
@@ -33,33 +29,23 @@ function Hero() {
             >
               Download Resume
             </a>
-            <a
-              href="#projects"
-              className="cta-secondary"
-            >
-              View Projects
-            </a>
           </div>
 
           {/* Bottom Metrics */}
           <div className="hero-metrics">
             <div className="metric-card">
-              <div className="metric-icon">💰</div>
               <div className="metric-value">$1M+</div>
               <div className="metric-label">Portfolio Managed</div>
             </div>
             <div className="metric-card">
-              <div className="metric-icon">👥</div>
               <div className="metric-value">350+</div>
               <div className="metric-label">Active Users</div>
             </div>
             <div className="metric-card">
-              <div className="metric-icon">⚡</div>
               <div className="metric-value">50%+</div>
               <div className="metric-label">Time Saved</div>
             </div>
             <div className="metric-card">
-              <div className="metric-icon">🚀</div>
               <div className="metric-value">6+</div>
               <div className="metric-label">Live Projects</div>
             </div>
@@ -76,8 +62,8 @@ function Hero() {
                 <span className="terminal-value">CS + Math</span>
               </div>
               <div className="terminal-line">
-                <span className="terminal-key">Class Year:</span>
-                <span className="terminal-value">2027</span>
+                <span className="terminal-key">Graduation:</span>
+                <span className="terminal-value">2028</span>
               </div>
               <div className="terminal-line">
                 <span className="terminal-key">Portfolio:</span>
@@ -89,7 +75,7 @@ function Hero() {
               </div>
               <div className="terminal-line">
                 <span className="terminal-key">Status:</span>
-                <span className="terminal-value terminal-recruiting">RECRUITING</span>
+                <span className="terminal-value terminal-recruiting">winter break!</span>
               </div>
             </div>
             <div className="terminal-footer">└────────────────────────┘</div>
