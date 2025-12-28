@@ -22,7 +22,7 @@ function Hero() {
           {/* CTA Buttons */}
           <div className="hero-cta">
             <a
-              href="/Guha_Roshni_Resume.pdf"
+              href="dist/Guha_Roshni_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-primary"

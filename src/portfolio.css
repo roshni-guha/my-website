@@ -215,10 +215,22 @@
   animation: pulse-border-exp 2s ease-in-out infinite;
 }
 
+[data-theme="light"] .status-active {
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid #059669;
+  color: #059669;
+}
+
 .status-ongoing {
   background: rgba(59, 130, 246, 0.15);
   border: 1px solid #3b82f6;
   color: #3b82f6;
+}
+
+[data-theme="light"] .status-ongoing {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid #3b82f6;
+  color: #2563eb;
 }
 
 .status-completed {
@@ -227,10 +239,22 @@
   color: #3b82f6;
 }
 
+[data-theme="light"] .status-completed {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid #3b82f6;
+  color: #2563eb;
+}
+
 .status-category {
   background: rgba(0, 255, 65, 0.15);
   border: 1px solid #00ff41;
   color: #00ff41;
+}
+
+[data-theme="light"] .status-category {
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid #059669;
+  color: #059669;
 }
 
 .status-dot-exp {

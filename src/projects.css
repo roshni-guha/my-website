@@ -146,16 +146,34 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
+[data-theme="light"] .status-proj-live {
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid #059669;
+  color: #059669;
+}
+
 .status-proj-production {
   background: rgba(0, 255, 65, 0.15);
   border: 1px solid #00ff41;
   color: #00ff41;
 }
 
+[data-theme="light"] .status-proj-production {
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid #059669;
+  color: #059669;
+}
+
 .status-proj-complete {
   background: rgba(0, 255, 65, 0.15);
   border: 1px solid #00ff41;
   color: #00ff41;
+}
+
+[data-theme="light"] .status-proj-complete {
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid #059669;
+  color: #059669;
 }
 
 @keyframes pulse-glow {
@@ -465,6 +483,11 @@
   animation: fadeIn 0.3s ease;
 }
 
+[data-theme="light"] .modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -521,9 +544,19 @@
   padding: 0;
 }
 
+[data-theme="light"] .modal-close {
+  background: rgba(0, 0, 0, 0.2);
+  color: #1a1a1a;
+}
+
 .modal-close:hover {
   background: rgba(255, 0, 0, 0.7);
   transform: rotate(90deg);
+}
+
+[data-theme="light"] .modal-close:hover {
+  background: rgba(239, 68, 68, 0.8);
+  color: white;
 }
 
 .modal-image-wrapper {
