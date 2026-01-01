@@ -1,28 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 :root {
-  font-family: 'Typeface', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  line-height: 1.5;
+  font-family: 'Crimson Text', 'EB Garamond', Georgia, serif;
+  line-height: 1.8;
   font-weight: 400;
 
-  /* Dark mode colors (default) */
-  --bg-primary: #1e1e1e;
-  --bg-secondary: #1f1f1f;
-  --bg-card: #1f1f1f;
-  --bg-card-hover: #252525;
-  --text-primary: rgba(255, 255, 255, 0.87);
-  --text-secondary: rgba(255, 255, 255, 0.65);
-  --text-muted: rgba(255, 255, 255, 0.5);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.12);
-  --accent-color: #646cff;
-  --accent-hover: #535bf2;
-  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --nav-border: #444;
-  --image-bg: #0a0a0a;
+  /* Light Mode - Navy and Cream Palette */
+  --bg-primary: #faf7f2;
+  --bg-secondary: #ffffff;
+  --bg-elevated: #f5f3ef;
+  --text-primary: #1a2742;
+  --text-secondary: #5a5a5a;
+  --text-dim: #6b7280;
+  --border: #d4c5b0;
 
-  color-scheme: dark;
+  /* Gold - stays the same in both modes */
+  --gold: #b8955e;
+  --gold-light: #d4b58d;
+
+  /* Navy accent - stays the same */
+  --accent-navy: #1e3a5f;
+  --accent-navy-dark: #162844;
+  --accent-navy-hover: #2d4976;
+  --accent-burgundy: #6b2737;
+  --accent-gold-dark: #9c7a3c;
+
+  --shadow-xs: 0 1px 3px rgba(26, 39, 66, 0.04);
+  --shadow-sm: 0 2px 8px rgba(30, 58, 95, 0.08);
+  --shadow-md: 0 4px 16px rgba(30, 58, 95, 0.12);
+  --shadow-lg: 0 8px 32px rgba(30, 58, 95, 0.15);
+  --shadow-xl: 0 12px 48px rgba(30, 58, 95, 0.18);
+
+  color-scheme: light;
   color: var(--text-primary);
   background-color: var(--bg-primary);
 
@@ -32,43 +41,37 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Light mode */
-[data-theme="light"] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-card: #ffffff;
-  --bg-elevated: #f1f3f5;
-  --bg-card-hover: #f8f9fa;
-  --text-primary: #1a1a1a;
-  --text-secondary: #4b5563;
-  --text-muted: #6b7280;
-  --text-dim: #6b7280;
-  --border-color: #e5e7eb;
-  --border-hover: #d1d5db;
-  --accent-cyan: #0891b2;
-  --accent-green: #059669;
-  --accent-blue: #0369a1;
-  --accent-color: #0891b2;
-  --accent-hover: #0e7490;
-  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 30px rgba(8, 145, 178, 0.15);
-  --nav-border: #e5e7eb;
-  --image-bg: #f1f3f5;
+/* Dark Mode - Swap Navy and Cream */
+body.dark-mode {
+  --bg-primary: #1a2742;
+  --bg-secondary: #2a3f5f;
+  --bg-elevated: #1f2d4d;
+  --text-primary: #faf7f2;
+  --text-secondary: #d4d4d4;
+  --text-dim: #9ca3af;
+  --border: #3d5a80;
 
-  color-scheme: light;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
+  /* Gold - stays the same */
+  --gold: #b8955e;
+  --gold-light: #d4b58d;
+
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.7);
+
+  color-scheme: dark;
 }
 
-a {
-  font-weight: 500;
-  color: var(--accent-color);
-  text-decoration: inherit;
-}
-a:hover {
-  color: var(--accent-hover);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Rich Textured Background */
 body {
   margin: 0;
   display: flex;
@@ -77,15 +80,77 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  text-align: center;
-  background-color: var(--bg-primary);
+  background: var(--bg-primary);
   color: var(--text-primary);
+  font-family: 'Crimson Text', 'EB Garamond', Georgia, serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* Subtle Paper Texture Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(26, 22, 20, 0.01) 2px,
+      rgba(26, 22, 20, 0.01) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(26, 22, 20, 0.01) 2px,
+      rgba(26, 22, 20, 0.01) 4px
+    );
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+a {
+  font-weight: 500;
+  color: var(--accent-navy);
+  text-decoration: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-navy-hover);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', 'EB Garamond', Georgia, serif;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 4rem;
   line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
 }
 
 button {
@@ -93,17 +158,77 @@ button {
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
+  font-weight: 600;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: 0.5px;
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   cursor: pointer;
   transition: border-color 0.25s, background-color 0.3s ease;
 }
+
 button:hover {
-  border-color: var(--accent-color);
+  border-color: var(--accent-navy);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+/* Decorative Section Dividers */
+.section-divider-ornamental {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 80px auto;
+  max-width: 600px;
+}
+
+.section-divider-ornamental::before,
+.section-divider-ornamental::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.section-divider-ornamental .ornament {
+  color: var(--gold);
+  font-size: 1.2em;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Enhanced Card Styles for Rich Depth */
+.card-rich {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-rich:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-navy);
+  transform: translateY(-4px);
+}
+
+/* Gold Accent Lines */
+.gold-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 40px 0;
+}
+
+.gold-line-vertical {
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
 }
