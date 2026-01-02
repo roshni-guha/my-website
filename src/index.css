@@ -41,27 +41,135 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark Mode - Swap Navy and Cream */
+/* Dark Mode - Premium Deep Theme with Maximum Contrast */
 body.dark-mode {
-  --bg-primary: #1a2742;
-  --bg-secondary: #2a3f5f;
-  --bg-elevated: #1f2d4d;
-  --text-primary: #faf7f2;
-  --text-secondary: #d4d4d4;
-  --text-dim: #9ca3af;
-  --border: #3d5a80;
+  --bg-primary: #0a0e14;
+  --bg-secondary: #151b24;
+  --bg-elevated: #1a222e;
+  --text-primary: #e8e6e1;
+  --text-secondary: #c4c2bd;
+  --text-dim: #8a8885;
+  --border: #2d3748;
 
-  /* Gold - stays the same */
-  --gold: #b8955e;
-  --gold-light: #d4b58d;
+  /* Gold - bright and vibrant in dark mode */
+  --gold: #d4a574;
+  --gold-light: #e6c199;
 
-  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.7);
+  --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.75);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.8);
 
   color-scheme: dark;
+}
+
+/* Dark Mode - Card Enhancements */
+body.dark-mode .experience-card,
+body.dark-mode .skill-category,
+body.dark-mode .project {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .experience-card:hover,
+body.dark-mode .skill-category:hover,
+body.dark-mode .project:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 165, 116, 0.15);
+  border-color: var(--gold);
+}
+
+/* Dark Mode - Gold Borders More Prominent */
+body.dark-mode .credential-item {
+  border-left-width: 4px;
+  border-left-color: var(--gold);
+}
+
+body.dark-mode .skill-header {
+  border-bottom: 3px solid var(--gold);
+}
+
+/* Dark Mode - Stats Panel Enhancement */
+body.dark-mode .stats-panel {
+  background: var(--bg-elevated);
+  border: 2px solid var(--border);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .panel-header {
+  color: var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
+
+/* Dark Mode - Text Glow for Important Values */
+body.dark-mode .stat-value,
+body.dark-mode .metric-value,
+body.dark-mode .highlight-value {
+  text-shadow: 0 0 8px rgba(212, 165, 116, 0.15);
+}
+
+/* Dark Mode - Button Styling */
+body.dark-mode .btn-primary {
+  background: linear-gradient(135deg, #d4a574 0%, #c89558 100%);
+  color: #0a0e14;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+}
+
+body.dark-mode .btn-primary:hover {
+  background: linear-gradient(135deg, #e6c199 0%, #d4a574 100%);
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+}
+
+body.dark-mode .btn-secondary {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: rgba(212, 165, 116, 0.1);
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+}
+
+/* Dark Mode - Project Card Sections */
+body.dark-mode .project-header {
+  background: linear-gradient(to bottom, var(--bg-elevated) 0%, var(--bg-secondary) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+body.dark-mode .project-highlights {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+
+body.dark-mode .project-footer {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+}
+
+/* Dark Mode - Credentials Styling */
+body.dark-mode .credential-title {
+  color: var(--text-primary);
+}
+
+body.dark-mode .credential-institution {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .credential-date {
+  color: var(--gold);
+}
+
+/* Dark Mode - Tech Tags */
+body.dark-mode .tech-tag,
+body.dark-mode .tech-item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 * {

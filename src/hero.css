@@ -19,9 +19,9 @@
 .hero-name {
   font-family: 'EB Garamond', serif;
   font-size: 4rem;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0.05em;
-  color: #1e3a5f;
+  color: var(--text-primary);
   margin-bottom: 40px;
 }
 
@@ -42,7 +42,7 @@
   font-family: 'EB Garamond', serif;
   font-size: 1.6rem;
   margin-bottom: 10px;
-  color: #1e3a5f;
+  color: var(--text-primary);
 }
 
 .credential-institution {
@@ -60,7 +60,7 @@
 
 /* About Section */
 .about-section {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .section-divider {
@@ -127,6 +127,40 @@
   box-shadow: 0 6px 20px rgba(184, 149, 94, 0.15);
 }
 
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-link {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  border-color: var(--gold);
+  background: rgba(184, 149, 94, 0.08);
+  color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(184, 149, 94, 0.2);
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+}
+
 /* Right Side - Stats Panel */
 .hero-right {
   position: sticky;
@@ -178,7 +212,7 @@
   font-family: 'EB Garamond', serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: #1e3a5f;
+  color: var(--text-primary);
 }
 
 /* Responsive Design */

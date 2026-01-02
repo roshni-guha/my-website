@@ -38,9 +38,9 @@ function Home() {
         top: 0,
         left: 0,
         right: 0,
-        backgroundColor: isDarkMode ? 'rgba(26, 39, 66, 0.95)' : 'rgba(250, 247, 242, 0.95)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: isDarkMode ? '1px solid #3d5a80' : '1px solid #d4c5b0',
+        backgroundColor: isDarkMode ? 'rgba(13, 17, 23, 0.98)' : 'rgba(250, 247, 242, 0.95)',
+        backdropFilter: 'blur(16px)',
+        borderBottom: isDarkMode ? '1px solid #42526e' : '1px solid #d4c5b0',
         zIndex: 1000,
         transition: 'all 0.3s ease',
         padding: '24px 60px',
@@ -82,7 +82,7 @@ function Home() {
               style={{
                 background: 'transparent',
                 border: 'none',
-                color: currentPage === 'home' ? '#1e3a5f' : (isDarkMode ? '#d4d4d4' : '#5a5a5a'),
+                color: currentPage === 'home' ? (isDarkMode ? '#f5f1e8' : '#1e3a5f') : (isDarkMode ? '#c5bfb5' : '#5a5a5a'),
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: '1.05em',
                 fontWeight: currentPage === 'home' ? '600' : '500',
@@ -91,13 +91,13 @@ function Home() {
                 position: 'relative',
                 padding: '5px 0',
                 letterSpacing: '1.2px',
-                borderBottom: currentPage === 'home' ? '2px solid #1e3a5f' : 'none'
+                borderBottom: currentPage === 'home' ? (isDarkMode ? '2px solid #d4a574' : '2px solid #1e3a5f') : 'none'
               }}
               onMouseEnter={(e) => {
-                if (currentPage !== 'home') e.target.style.color = '#b8955e';
+                if (currentPage !== 'home') e.target.style.color = '#d4a574';
               }}
               onMouseLeave={(e) => {
-                if (currentPage !== 'home') e.target.style.color = isDarkMode ? '#d4d4d4' : '#5a5a5a';
+                if (currentPage !== 'home') e.target.style.color = isDarkMode ? '#c5bfb5' : '#5a5a5a';
               }}
             >
               Home
@@ -107,7 +107,7 @@ function Home() {
               style={{
                 background: 'transparent',
                 border: 'none',
-                color: currentPage === 'portfolio' ? '#1e3a5f' : (isDarkMode ? '#d4d4d4' : '#5a5a5a'),
+                color: currentPage === 'portfolio' ? (isDarkMode ? '#f5f1e8' : '#1e3a5f') : (isDarkMode ? '#c5bfb5' : '#5a5a5a'),
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: '1.05em',
                 fontWeight: currentPage === 'portfolio' ? '600' : '500',
@@ -116,13 +116,13 @@ function Home() {
                 position: 'relative',
                 padding: '5px 0',
                 letterSpacing: '1.2px',
-                borderBottom: currentPage === 'portfolio' ? '2px solid #1e3a5f' : 'none'
+                borderBottom: currentPage === 'portfolio' ? (isDarkMode ? '2px solid #d4a574' : '2px solid #1e3a5f') : 'none'
               }}
               onMouseEnter={(e) => {
-                if (currentPage !== 'portfolio') e.target.style.color = '#b8955e';
+                if (currentPage !== 'portfolio') e.target.style.color = '#d4a574';
               }}
               onMouseLeave={(e) => {
-                if (currentPage !== 'portfolio') e.target.style.color = isDarkMode ? '#d4d4d4' : '#5a5a5a';
+                if (currentPage !== 'portfolio') e.target.style.color = isDarkMode ? '#c5bfb5' : '#5a5a5a';
               }}
             >
               Experience
@@ -132,7 +132,7 @@ function Home() {
               style={{
                 background: 'transparent',
                 border: 'none',
-                color: currentPage === 'projects' ? '#1e3a5f' : (isDarkMode ? '#d4d4d4' : '#5a5a5a'),
+                color: currentPage === 'projects' ? (isDarkMode ? '#f5f1e8' : '#1e3a5f') : (isDarkMode ? '#c5bfb5' : '#5a5a5a'),
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: '1.05em',
                 fontWeight: currentPage === 'projects' ? '600' : '500',
@@ -141,13 +141,13 @@ function Home() {
                 position: 'relative',
                 padding: '5px 0',
                 letterSpacing: '1.2px',
-                borderBottom: currentPage === 'projects' ? '2px solid #1e3a5f' : 'none'
+                borderBottom: currentPage === 'projects' ? (isDarkMode ? '2px solid #d4a574' : '2px solid #1e3a5f') : 'none'
               }}
               onMouseEnter={(e) => {
-                if (currentPage !== 'projects') e.target.style.color = '#b8955e';
+                if (currentPage !== 'projects') e.target.style.color = '#d4a574';
               }}
               onMouseLeave={(e) => {
-                if (currentPage !== 'projects') e.target.style.color = isDarkMode ? '#d4d4d4' : '#5a5a5a';
+                if (currentPage !== 'projects') e.target.style.color = isDarkMode ? '#c5bfb5' : '#5a5a5a';
               }}
             >
               Projects
@@ -157,7 +157,7 @@ function Home() {
               style={{
                 background: 'transparent',
                 border: 'none',
-                color: currentPage === 'skills' ? '#1e3a5f' : (isDarkMode ? '#d4d4d4' : '#5a5a5a'),
+                color: currentPage === 'skills' ? (isDarkMode ? '#f5f1e8' : '#1e3a5f') : (isDarkMode ? '#c5bfb5' : '#5a5a5a'),
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: '1.05em',
                 fontWeight: currentPage === 'skills' ? '600' : '500',
@@ -166,13 +166,13 @@ function Home() {
                 position: 'relative',
                 padding: '5px 0',
                 letterSpacing: '1.2px',
-                borderBottom: currentPage === 'skills' ? '2px solid #1e3a5f' : 'none'
+                borderBottom: currentPage === 'skills' ? (isDarkMode ? '2px solid #d4a574' : '2px solid #1e3a5f') : 'none'
               }}
               onMouseEnter={(e) => {
-                if (currentPage !== 'skills') e.target.style.color = '#b8955e';
+                if (currentPage !== 'skills') e.target.style.color = '#d4a574';
               }}
               onMouseLeave={(e) => {
-                if (currentPage !== 'skills') e.target.style.color = isDarkMode ? '#d4d4d4' : '#5a5a5a';
+                if (currentPage !== 'skills') e.target.style.color = isDarkMode ? '#c5bfb5' : '#5a5a5a';
               }}
             >
               Skills
@@ -181,8 +181,8 @@ function Home() {
               onClick={toggleTheme}
               style={{
                 background: 'transparent',
-                border: '2px solid #b8955e',
-                color: '#b8955e',
+                border: isDarkMode ? '2px solid #d4a574' : '2px solid #b8955e',
+                color: isDarkMode ? '#d4a574' : '#b8955e',
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: '0.95em',
                 fontWeight: '600',
@@ -205,7 +205,6 @@ function Home() {
                 e.target.style.transform = 'translateY(0)';
               }}
             >
-              <span style={{ fontSize: '1.2em' }}>{isDarkMode ? '☀️' : '🌙'}</span>
               {isDarkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
           </div>

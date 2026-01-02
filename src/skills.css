@@ -3,7 +3,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 100px 60px;
-  background: #faf8f5;
+  background: var(--bg-primary);
 }
 
 /* Section Header */
@@ -15,7 +15,7 @@
 .section-number {
   font-family: 'EB Garamond', serif;
   font-size: 1.2rem;
-  color: #b8955e;
+  color: var(--gold);
   letter-spacing: 0.2em;
   margin-bottom: 20px;
   font-weight: 600;
@@ -25,14 +25,14 @@
   font-family: 'EB Garamond', serif;
   font-size: 3rem;
   font-weight: 600;
-  color: #1e3a5f;
+  color: var(--text-primary);
   margin-bottom: 30px;
 }
 
 .section-divider {
   width: 120px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #b8955e, transparent);
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
   margin: 0 auto 30px;
 }
 
@@ -40,7 +40,7 @@
   font-family: 'Crimson Text', Georgia, serif;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #4a4540;
+  color: var(--text-secondary);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -53,19 +53,19 @@
 }
 
 .skill-category {
-  border: 1px solid #d4cfc4;
-  background: white;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
   padding: 40px;
   transition: all 0.3s ease;
 }
 
 .skill-category:hover {
-  border-color: #b8955e;
+  border-color: var(--gold);
   box-shadow: 0 8px 24px rgba(30, 58, 95, 0.12);
 }
 
 .skill-header {
-  border-bottom: 2px solid #b8955e;
+  border-bottom: 2px solid var(--gold);
   padding-bottom: 20px;
   margin-bottom: 25px;
 }
@@ -73,7 +73,7 @@
 .skill-category-title {
   font-family: 'EB Garamond', serif;
   font-size: 1.6rem;
-  color: #1e3a5f;
+  color: var(--text-primary);
   font-weight: 600;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .skill-name {
-  color: #1a1614;
+  color: var(--text-primary);
   font-size: 1.05rem;
   font-family: 'Crimson Text', Georgia, serif;
 }
@@ -110,12 +110,12 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #d4cfc4;
+  background: var(--border);
   transition: all 0.3s ease;
 }
 
 .proficiency-dot.filled {
-  background: #b8955e;
+  background: var(--gold);
 }
 
 .skill-item:hover .proficiency-dot.filled {

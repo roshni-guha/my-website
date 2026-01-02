@@ -2,21 +2,21 @@ import './projects.css';
 
 function Projects() {
   const projects = [
-    {
+      {
       id: 1,
       romanNumeral: 'I.',
-      title: 'Smoking Habit Predictor',
-      category: 'Machine Learning Research',
-      description: 'Preprocessed CSV health dataset (demographics, oral health, habits) and applied multiple ML algorithms (Decision Tree, KNN, Naïve Bayes, SVM) to classify smoking status. Compared model accuracy with and without feature scaling; achieved best performance with Support Vector Machine (≈76% accuracy) validated via 10-fold cross validation.',
-      technologies: ['Python', 'scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
+      title: 'RBC AI Research Assistant',
+      category: 'Machine Learning & Financial Technology',
+      description: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment feeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers. Built a functional MVP in Python/Streamlit that retrieved, summarized, and visualized multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators) within seconds, reducing manual research time by over 50%.',
+      technologies: ['Python', 'Node.js', 'Express.js', 'JavaScript', 'Yahoo Finance API', 'SEC Edgar API', 'NewsAPI', 'yfinance', 'pandas'],
       highlights: [
-        { value: '87%', label: 'Model Accuracy' },
-        { value: '2000+', label: 'Training Samples' },
-        { value: '5', label: 'Algorithms Tested' }
+        { value: '20+', label: 'Portfolio Managers' },
+        { value: '50%', label: 'Time Reduction' },
+        { value: 'Real-time', label: 'Data Analysis' }
       ],
       links: [
-        { url: 'https://github.com/roshni-guha/smoking-or-not', label: 'View Code' },
-        { url: 'https://github.com/roshni-guha/smoking-or-not', label: 'Documentation' }
+        { url: 'https://github.com/roshni-guha/trading-bot', label: 'View Code' },
+        { url: 'https://github.com/roshni-guha/trading-bot', label: 'Technical Specifications' }
       ]
     },
     {
@@ -39,18 +39,18 @@ function Projects() {
     {
       id: 3,
       romanNumeral: 'III.',
-      title: 'RBC AI Research Assistant',
-      category: 'Machine Learning & Financial Technology',
-      description: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment feeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers. Built a functional MVP in Python/Streamlit that retrieved, summarized, and visualized multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators) within seconds, reducing manual research time by over 50%.',
-      technologies: ['Python', 'Node.js', 'Express.js', 'JavaScript', 'Yahoo Finance API', 'SEC Edgar API', 'NewsAPI', 'yfinance', 'pandas'],
+      title: 'Smoking Habit Predictor',
+      category: 'Machine Learning Research',
+      description: 'Preprocessed CSV health dataset (demographics, oral health, habits) and applied multiple ML algorithms (Decision Tree, KNN, Naïve Bayes, SVM) to classify smoking status. Compared model accuracy with and without feature scaling; achieved best performance with Support Vector Machine (≈76% accuracy) validated via 10-fold cross validation.',
+      technologies: ['Python', 'scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
       highlights: [
-        { value: '20+', label: 'Portfolio Managers' },
-        { value: '50%', label: 'Time Reduction' },
-        { value: 'Real-time', label: 'Data Analysis' }
+        { value: '87%', label: 'Model Accuracy' },
+        { value: '2000+', label: 'Training Samples' },
+        { value: '5', label: 'Algorithms Tested' }
       ],
       links: [
-        { url: 'https://github.com/roshni-guha/trading-bot', label: 'View Code' },
-        { url: 'https://github.com/roshni-guha/trading-bot', label: 'Technical Specifications' }
+        { url: 'https://github.com/roshni-guha/smoking-or-not', label: 'View Code' },
+        { url: 'https://github.com/roshni-guha/smoking-or-not', label: 'Documentation' }
       ]
     },
     {
