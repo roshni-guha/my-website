@@ -16,7 +16,7 @@ function Projects() {
       ],
       links: [
         { url: 'https://github.com/roshni-guha/trading-bot', label: 'View Code' },
-        { url: 'https://github.com/roshni-guha/trading-bot', label: 'Technical Specifications' }
+        // { url: 'https://github.com/roshni-guha/trading-bot', label: 'Technical Specifications' }
       ]
     },
     {
@@ -33,7 +33,7 @@ function Projects() {
       ],
       links: [
         { url: 'https://uwmatch.com', label: 'Live Demo' },
-        { url: 'https://uwmatch.com', label: 'Product Overview' }
+        // { url: 'https://uwmatch.com', label: 'Product Overview' }
       ]
     },
     {
@@ -50,7 +50,7 @@ function Projects() {
       ],
       links: [
         { url: 'https://github.com/roshni-guha/smoking-or-not', label: 'View Code' },
-        { url: 'https://github.com/roshni-guha/smoking-or-not', label: 'Documentation' }
+        // { url: 'https://github.com/roshni-guha/smoking-or-not', label: 'Documentation' }
       ]
     },
     {
@@ -66,8 +66,8 @@ function Projects() {
         { value: 'Validated', label: 'Backtesting' }
       ],
       links: [
-        { url: 'https://github.com/roshni-guha/trading-bot', label: 'View Code' },
-        { url: 'https://github.com/roshni-guha/trading-bot', label: 'Model Documentation' }
+        { url: 'https://github.com/roshni-guha/CheeseHack-2024', label: 'View Code' },
+        // { url: 'https://github.com/roshni-guha/CheeseHack-2024', label: 'Model Documentation' }
       ]
     },
     {
@@ -83,8 +83,8 @@ function Projects() {
         { value: 'Interactive', label: 'GUI Interface' }
       ],
       links: [
-        { url: 'https://github.com/roshni-guha/ds-visualizer', label: 'View Code' },
-        { url: 'https://github.com/roshni-guha/ds-visualizer', label: 'User Guide' }
+        { url: 'https://github.com/roshni-guha/stock-price-visualizer', label: 'View Code' },
+        // { url: 'https://github.com/roshni-guha/stock-price-visualizer', label: 'User Guide' }
       ]
     },
     {
@@ -100,8 +100,8 @@ function Projects() {
         { value: 'Automated', label: 'Job Matching' }
       ],
       links: [
-        { url: 'https://github.com/roshni-guha/sentiment-pipeline', label: 'View Code' },
-        { url: 'https://github.com/roshni-guha/sentiment-pipeline', label: 'Implementation Details' }
+        { url: 'https://github.com/roshni-guha/RBC-ai-assistant', label: 'View Code' },
+        // { url: 'https://github.com/roshni-guha/RBC-ai-assistant', label: 'Implementation Details' }
       ]
     },
   ];
