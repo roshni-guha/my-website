@@ -1,14 +1,31 @@
-**LEARNING POINTS**
+# my portfolio website
 
-- React connects to HTML via a container with createRoot() function
-- Class is a type of function and we give it a contructor() method
-- Var is to declare variables. Scope of function
-- const is for constant. 
-- let - like var but has scope only for the block
-- map() lets you create arrays 
+personal portfolio showcasing my projects, experience, and skills. built with react and styled with an old money aesthetic (navy, cream, gold color palette).
 
- 
- **Resume page** 
+## features
+- dark/light mode toggle with localStorage persistence
+- responsive design
+- dynamic project showcase with filtering
+- interactive skills section
+- experience timeline with metrics
+- pdf resume viewer
+- social links integration
 
- - Connected to local file directory
- - Uses React-pdf to display the pdf
+## tech stack
+- react - component-based UI
+- vite - build tool and dev server
+- css variables - theming system
+- react-pdf - pdf rendering
+- localStorage API - theme persistence
+
+## how to run
+```bash
+npm install
+npm run dev
+```
+
+## build
+```bash
+npm run build
+```
+
