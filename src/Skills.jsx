@@ -6,7 +6,7 @@ function Skills() {
       title: 'Programming Languages',
       skills: [
         { name: 'Python', proficiency: 5 },
-        { name: 'C++', proficiency: 5 },
+        // { name: 'C++', proficiency: 5 },
         { name: 'Java', proficiency: 4 },
         { name: 'R', proficiency: 4 },
         { name: 'SQL', proficiency: 4 },
@@ -27,10 +27,10 @@ function Skills() {
       title: 'Systems Engineering',
       skills: [
         { name: 'Docker', proficiency: 4 },
-        { name: 'Kubernetes', proficiency: 3 },
+        // { name: 'Kubernetes', proficiency: 3 },
         { name: 'Git', proficiency: 5 },
-        { name: 'Linux', proficiency: 4 },
-        { name: 'AWS/GCP', proficiency: 4 }
+        // { name: 'Linux', proficiency: 4 },
+        // { name: 'AWS/GCP', proficiency: 4 }
       ]
     },
     {
