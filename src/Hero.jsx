@@ -1,11 +1,42 @@
+import { useState, useEffect } from 'react';
 import './hero.css';
 
 function Hero() {
+  const [displayedText, setDisplayedText] = useState('');
+  const fullText = 'hi, this is Roshni Guha';
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayedText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 80);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 530);
+
+    return () => clearInterval(cursorInterval);
+  }, []);
+
   return (
     <div className="hero-container">
       <div className="hero-left">
-        {/* Name */}
-        <h1 className="hero-name">Roshni Guha</h1>
+        {/* Terminal Typing Animation */}
+        <div className="terminal-header">
+          <span className="terminal-prompt">$</span>
+          <span className="terminal-text">{displayedText}</span>
+          <span className={`terminal-cursor ${showCursor ? 'visible' : ''}`}>▋</span>
+        </div>
 
         {/* Credentials Grid */}
         <div className="credentials-grid">

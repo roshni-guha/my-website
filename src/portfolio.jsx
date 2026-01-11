@@ -209,19 +209,6 @@ function Portfolio() {
                   <span className="period">{experience.period}</span>
                 </div>
 
-                {/* Metrics Box */}
-                <div className="metrics-box">
-                  <div className="metrics-header">KEY IMPACT:</div>
-                  <div className="metrics-grid">
-                    {experience.metrics.map((metric, index) => (
-                      <div key={index} className="metric-item">
-                        <span className="metric-value">{metric.value}</span>
-                        <span className="metric-label">{metric.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
                 <p className="description">{experience.description}</p>
                 <div className="technologies">
                   {experience.technologies.map((tech, index) => (
