@@ -164,11 +164,37 @@ function Portfolio() {
     },
   ];
 
+  // Events data
+  const events = [
+    {
+      id: 1,
+      title: 'Emerging Leaders Series - Dallas Engineering',
+      organization: 'Goldman Sachs',
+      period: 'April 2026',
+      description: 'Upcoming in-person event in Dallas for selected engineering students to network with Goldman Sachs leaders and explore career opportunities in technology and finance.',
+    },
+    {
+      id: 2,
+      title: 'Virtual Insight Series',
+      organization: 'Goldman Sachs',
+      period: 'May - June 2025',
+      description: 'Completed four-week program exploring firm divisions and career pathways',
+    },
+    {
+      id: 3,
+      title: 'Women\'s Possibilities Summit',
+      organization: 'Goldman Sachs',
+      period: 'January - December 2025',
+      description: 'Chosen among 14000+ to participate in a year-long program focused on leadership development, networking, and career growth for women',
+    },
+  ];
+
   const sections = [
     { id: 'experiences', label: 'Experiences' },
     { id: 'certifications', label: 'Certifications' },
     { id: 'awards', label: 'Awards' },
-    { id: 'extracurricular', label: 'Extracurricular' }
+    { id: 'extracurricular', label: 'Extracurricular' },
+    { id: 'events', label: 'Events' }
   ];
 
   return (
@@ -321,6 +347,28 @@ function Portfolio() {
                 </div>
                 <span className="period">{item.period}</span>
                 <p className="description">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Events Section */}
+      {activeSection === 'events' && (
+        <section className="experiences-section">
+          <div className="section-header">
+            <h2 className="section-number">05 | EVENTS</h2>
+            <div className="section-divider"></div>
+          </div>
+          <div className="experiences-scroll">
+            {events.map((event) => (
+              <div key={event.id} className="experience-card">
+                <div className="experience-header">
+                  <h3>{event.title}</h3>
+                </div>
+                <span className="company">{event.organization}</span>
+                <span className="period">{event.period}</span>
+                <p className="description">{event.description}</p>
               </div>
             ))}
           </div>
