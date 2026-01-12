@@ -113,7 +113,7 @@ function Portfolio() {
       event: 'Project Design Space, Dubai Institute of Design and Innovation',
       period: 'October 2023',
       description: 'Developed a sustainable cat food dispenser model utilizing recycled Samsung TV boxes to promote environmental responsibility and minimize cardboard waste.',
-      file: 'public/PDS Manual.pdf',
+      file: '/PDS Manual.pdf',
       link: 'https://drive.google.com/file/d/1zQwZmydhKXgpoeiV6dou6mGmdByB_aMN/view?usp=share_link'
     },
     {
