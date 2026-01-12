@@ -208,13 +208,6 @@ function Portfolio() {
       period: 'April 2025',
       description: 'Participated in a virtual event designed for first-year students to explore career opportunities and network with professionals at JP Morgan Chase.',
     },
-    {
-      id: 4,
-      title: 'Freshman Focus',
-      organization: 'JP Morgan Chase',
-      period: 'April 2025',
-      description: 'Participated in a virtual event designed for first-year students to explore career opportunities and network with professionals at JP Morgan Chase.',
-    },
   ];
 
   const sections = [
