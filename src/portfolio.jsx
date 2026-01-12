@@ -72,7 +72,7 @@ function Portfolio() {
       // issuer: 'IIT Kanpur',
       period: 'August 2025',
       description: 'Mastered designing, implementing, and evaluating supervised and unsupervised ML models using Python. Engineered features, optimized algorithms (e.g., regression, decision trees, SVM, k-NN, K-means), and performed data preprocessing and analytics with Pandas and NumPy. Applied model interpretability tools (SHAP, LIME) and delivered end-to-end ML solutions.',
-      file: 'public/IITK.pdf'
+      file: '/IITK.pdf'
     },
     {
       id: 2,
