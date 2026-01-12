@@ -74,7 +74,7 @@ function Hero() {
 
         {/* CTA Buttons */}
         <div className="hero-cta">
-          <a href="dist/Guha_Roshni_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Download CV</a>
+          <a href="public/Guha_Roshni_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Download CV</a>
         </div>
 
         {/* Social Links */}
