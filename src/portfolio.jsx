@@ -8,7 +8,7 @@ function Portfolio() {
   const experiences = [
     {
       id: 1,
-      title: 'Undergraduate Research Assistant - Quantitative Finance',
+      title: 'Researcher - Quantitative Finance',
       company: 'Capitalfund Investment Fund, Wisconsin School of Business',
       period: 'Sept. 2025 - Present',
       status: 'ACTIVE',
@@ -182,10 +182,38 @@ function Portfolio() {
     },
     {
       id: 3,
+      title: 'Sophomore Showcase',
+      organization: 'JP Morgan Chase',
+      period: 'April 2025',
+      description: 'Participated in a virtual event designed for second-year students to explore career opportunities and network with professionals at JP Morgan Chase.',
+    },
+    {
+      id: 4,
+      title: 'Women in Wealth: LIFT - College Leadership Summit',
+      organization: 'Morgan Stanley',
+      period: 'April 2025',
+      description: 'Attended a virtual leadership summit focused on empowering women in finance through workshops, networking, and skill-building sessions.',
+    },
+    {
+      id: 3,
       title: 'Women\'s Possibilities Summit',
       organization: 'Goldman Sachs',
       period: 'January - December 2025',
       description: 'Chosen among 14000+ to participate in a year-long program focused on leadership development, networking, and career growth for women',
+    },
+    {
+      id: 4,
+      title: 'Freshman Focus',
+      organization: 'JP Morgan Chase',
+      period: 'April 2025',
+      description: 'Participated in a virtual event designed for first-year students to explore career opportunities and network with professionals at JP Morgan Chase.',
+    },
+    {
+      id: 4,
+      title: 'Freshman Focus',
+      organization: 'JP Morgan Chase',
+      period: 'April 2025',
+      description: 'Participated in a virtual event designed for first-year students to explore career opportunities and network with professionals at JP Morgan Chase.',
     },
   ];
 

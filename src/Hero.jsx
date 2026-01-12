@@ -113,11 +113,6 @@ function Hero() {
           </div>
 
           <div className="stat-item">
-            <div className="stat-label">Seeking</div>
-            <div className="stat-value">Summer 2026</div>
-          </div>
-
-          <div className="stat-item">
             <div className="stat-label">Targets</div>
             <div className="stat-value">SWE · Quant · ML</div>
           </div>

@@ -41,25 +41,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark Mode - Premium Deep Theme with Maximum Contrast */
+/* Dark Mode - Elegant Modern Theme */
 body.dark-mode {
-  --bg-primary: #0a0e14;
-  --bg-secondary: #151b24;
-  --bg-elevated: #1a222e;
-  --text-primary: #e8e6e1;
-  --text-secondary: #c4c2bd;
-  --text-dim: #8a8885;
-  --border: #2d3748;
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f29;
+  --bg-elevated: #242936;
+  --text-primary: #f5f3ef;
+  --text-secondary: #d1cfc9;
+  --text-dim: #a8a6a1;
+  --border: #3d4455;
 
-  /* Gold - bright and vibrant in dark mode */
-  --gold: #d4a574;
-  --gold-light: #e6c199;
+  /* Gold - warm and luxurious in dark mode */
+  --gold: #e6c199;
+  --gold-light: #f0d4b3;
 
-  --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.5);
-  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.6);
-  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.7);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.75);
-  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.8);
+  --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.7);
 
   color-scheme: dark;
 }
@@ -70,13 +70,14 @@ body.dark-mode .skill-category,
 body.dark-mode .project {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .experience-card:hover,
 body.dark-mode .skill-category:hover,
 body.dark-mode .project:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 165, 116, 0.15);
+  background: var(--bg-secondary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   border-color: var(--gold);
 }
 
@@ -102,24 +103,24 @@ body.dark-mode .panel-header {
   border-bottom: 2px solid var(--gold);
 }
 
-/* Dark Mode - Text Glow for Important Values */
+/* Dark Mode - Text for Important Values */
 body.dark-mode .stat-value,
 body.dark-mode .metric-value,
 body.dark-mode .highlight-value {
-  text-shadow: 0 0 8px rgba(212, 165, 116, 0.15);
+  color: var(--text-primary);
 }
 
 /* Dark Mode - Button Styling */
 body.dark-mode .btn-primary {
-  background: linear-gradient(135deg, #d4a574 0%, #c89558 100%);
-  color: #0a0e14;
+  background: var(--gold);
+  color: #0f1419;
   border: 2px solid var(--gold);
-  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+  box-shadow: 0 4px 12px rgba(230, 193, 153, 0.3);
 }
 
 body.dark-mode .btn-primary:hover {
-  background: linear-gradient(135deg, #e6c199 0%, #d4a574 100%);
-  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+  background: var(--gold-light);
+  box-shadow: 0 6px 20px rgba(230, 193, 153, 0.4);
 }
 
 body.dark-mode .btn-secondary {
@@ -170,6 +171,48 @@ body.dark-mode .tech-item {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .tech-tag:hover,
+body.dark-mode .tech-item:hover {
+  background: var(--bg-secondary);
+  border-color: var(--gold);
+}
+
+/* Dark Mode - Terminal Header */
+body.dark-mode .terminal-header {
+  background: var(--bg-elevated);
+  border: 2px solid var(--border);
+  border-left: 6px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .terminal-header:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-left-width: 8px;
+}
+
+body.dark-mode .terminal-text {
+  color: var(--text-primary);
+}
+
+/* Dark Mode - Navigation */
+body.dark-mode header {
+  background: rgba(15, 20, 25, 0.98) !important;
+  border-bottom-color: var(--border) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Dark Mode - Stats Panel */
+body.dark-mode .stats-panel {
+  background: var(--bg-elevated);
+  border: 2px solid var(--border);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark Mode - Section Headers */
+body.dark-mode .section-number {
+  color: var(--text-primary);
 }
 
 * {

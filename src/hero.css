@@ -24,24 +24,21 @@
   color: var(--text-primary);
   margin-bottom: 80px;
   text-align: left;
-  background: linear-gradient(135deg, rgba(30, 58, 95, 0.05) 0%, rgba(184, 149, 94, 0.05) 100%);
+  background: var(--bg-secondary);
   padding: 40px 50px;
   border: 2px solid var(--border);
   border-left: 6px solid var(--gold);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08),
-              0 0 0 1px rgba(184, 149, 94, 0.15),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+              0 0 0 1px rgba(184, 149, 94, 0.15);
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(12px);
   letter-spacing: -0.02em;
 }
 
 .terminal-header:hover {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12),
-              0 0 0 2px rgba(184, 149, 94, 0.25),
-              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+              0 0 0 2px rgba(184, 149, 94, 0.25);
   transform: translateY(-3px);
   border-left-width: 8px;
 }
