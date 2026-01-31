@@ -103,17 +103,12 @@ function Hero() {
           <div className="panel-header">Professional Status</div>
 
           <div className="stat-item">
-            <div className="stat-label">Class Year</div>
-            <div className="stat-value">2028</div>
-          </div>
-
-          <div className="stat-item">
             <div className="stat-label">Current Role</div>
-            <div className="stat-value">Sophomore</div>
+            <div className="stat-value">Project Intern @ RBC, Quant Researcher @ UW-Madison, Peer Mentor @ UW-Madison</div>
           </div>
 
           <div className="stat-item">
-            <div className="stat-label">Targets</div>
+            <div className="stat-label">Areas</div>
             <div className="stat-value">SWE · Quant · ML</div>
           </div>
         </div>
