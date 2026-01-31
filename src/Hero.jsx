@@ -72,10 +72,10 @@ function Hero() {
           </p>
         </div>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons
         <div className="hero-cta">
           <a href="/Guha_Roshni_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Download CV</a>
-        </div>
+        </div> */}
 
         {/* Social Links */}
         <div className="social-links">
