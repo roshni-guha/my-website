@@ -10,7 +10,7 @@ function Projects() {
       description: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment feeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers. Built a functional MVP in Python/Streamlit that retrieved, summarized, and visualized multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators) within seconds, reducing manual research time by over 50%.',
       technologies: ['Python', 'Node.js', 'Express.js', 'JavaScript', 'Yahoo Finance API', 'SEC Edgar API', 'NewsAPI', 'yfinance', 'pandas'],
       highlights: [
-        { value: '20+', label: 'Portfolio Managers' },
+        { value: 'Collaborated with a', label: 'Portfolio Manager' },
         { value: '50%', label: 'Time Reduction' },
         { value: 'Real-time', label: 'Data Analysis' }
       ],
