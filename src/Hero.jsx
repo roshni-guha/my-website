@@ -57,7 +57,7 @@ function Hero() {
 
           <div className="credential-item">
             <h3 className="credential-title">Current Status</h3>
-            <p className="credential-institution">Winter Break! Happy new year, and have a great year!</p>
+            <p className="credential-institution">Spring semester! Enjoy classes!</p>
           </div>
         </div>
 
