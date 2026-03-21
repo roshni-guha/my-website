@@ -280,10 +280,12 @@ function Portfolio() {
           <div className="experiences-scroll">
             {certifications.map((cert) => (
               <div key={cert.id} className="experience-card">
-                <div className="experience-header">
-                  <h3>{cert.title}</h3>
+                <div className="card-top">
+                  <div className="experience-header">
+                    <h3>{cert.title}</h3>
+                  </div>
+                  <span className="period">{cert.period}</span>
                 </div>
-                <span className="period">{cert.period}</span>
                 <p className="description">{cert.description}</p>
                 {(cert.file || cert.link) && (
                   <div className="cert-link-wrapper">
@@ -313,11 +315,13 @@ function Portfolio() {
           <div className="experiences-scroll">
             {awards.map((award) => (
               <div key={award.id} className="experience-card">
-                <div className="experience-header">
-                  <h3>{award.title}</h3>
+                <div className="card-top">
+                  <div className="experience-header">
+                    <h3>{award.title}</h3>
+                  </div>
                   <span className="company">{award.event}</span>
+                  <span className="period">{award.period}</span>
                 </div>
-                <span className="period">{award.period}</span>
                 <p className="description">{award.description}</p>
                 {(award.file || award.link) && (
                   <div className="cert-link-wrapper">
@@ -360,13 +364,15 @@ function Portfolio() {
           <div className="experiences-scroll">
             {extracurricular.map((item) => (
               <div key={item.id} className="experience-card">
-                <div className="experience-header">
-                  <h3>{item.title}</h3>
-                  <span className="status-badge-exp status-category">
-                    {item.category}
-                  </span>
+                <div className="card-top">
+                  <div className="experience-header">
+                    <h3>{item.title}</h3>
+                    <span className="status-badge-exp status-category">
+                      {item.category}
+                    </span>
+                  </div>
+                  <span className="period">{item.period}</span>
                 </div>
-                <span className="period">{item.period}</span>
                 <p className="description">{item.description}</p>
               </div>
             ))}
@@ -384,11 +390,13 @@ function Portfolio() {
           <div className="experiences-scroll">
             {events.map((event) => (
               <div key={event.id} className="experience-card">
-                <div className="experience-header">
-                  <h3>{event.title}</h3>
+                <div className="card-top">
+                  <div className="experience-header">
+                    <h3>{event.title}</h3>
+                  </div>
+                  <span className="company">{event.organization}</span>
+                  <span className="period">{event.period}</span>
                 </div>
-                <span className="company">{event.organization}</span>
-                <span className="period">{event.period}</span>
                 <p className="description">{event.description}</p>
               </div>
             ))}
