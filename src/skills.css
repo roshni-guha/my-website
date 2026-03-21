@@ -2,168 +2,231 @@
 .skills-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 60px;
+  padding: 80px 60px;
   background: var(--bg-primary);
 }
 
 /* Section Header */
 .section-header {
-  text-align: center;
-  margin-bottom: 80px;
+  text-align: left;
+  margin-bottom: 60px;
 }
 
 .section-number {
-  font-family: 'EB Garamond', serif;
-  font-size: 1.2rem;
-  color: var(--gold);
-  letter-spacing: 0.2em;
-  margin-bottom: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
   font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Comment-style prefix */
+.section-number::before {
+  content: '// ';
+  color: var(--text-dim);
 }
 
 .section-title {
-  font-family: 'EB Garamond', serif;
-  font-size: 3rem;
-  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 30px;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+/* Terminal command prefix for title */
+.section-title::before {
+  content: '$ ';
+  color: var(--green);
 }
 
 .section-divider {
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 0 auto 30px;
+  width: 50px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 0 20px;
 }
 
 .section-description {
-  font-family: 'Crimson Text', Georgia, serif;
-  font-size: 1.1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
   line-height: 1.8;
   color: var(--text-secondary);
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 700px;
 }
 
 /* Skills Grid */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 20px;
 }
 
 .skill-category {
   border: 1px solid var(--border);
+  border-radius: 6px;
   background: var(--bg-secondary);
-  padding: 40px;
+  padding: 0;
   transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Terminal window chrome */
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Traffic lights */
+.skill-category::after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 14px;
+  width: 10px;
+  height: 10px;
+  background: #ff5f56;
+  border-radius: 50%;
+  box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27c93f;
 }
 
 .skill-category:hover {
-  border-color: var(--gold);
-  box-shadow: 0 8px 24px rgba(30, 58, 95, 0.12);
+  border-color: var(--green);
+  box-shadow: 0 0 20px rgba(63, 185, 80, 0.08), 0 4px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
 
 .skill-header {
-  border-bottom: 2px solid var(--gold);
-  padding-bottom: 20px;
-  margin-bottom: 25px;
+  padding: 42px 24px 16px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
 }
 
 .skill-category-title {
-  font-family: 'EB Garamond', serif;
-  font-size: 1.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Directory/namespace prefix */
+.skill-category-title::before {
+  content: '~/';
+  color: var(--green);
+  font-weight: 700;
 }
 
 .skill-items {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 0;
+  padding: 8px 0;
 }
 
 .skill-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
-  border-bottom: 1px solid rgba(212, 197, 176, 0.3);
+  padding: 10px 24px;
+  border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+  transition: all 0.2s ease;
 }
 
 .skill-item:last-child {
   border-bottom: none;
 }
 
+.skill-item:hover {
+  background: rgba(63, 185, 80, 0.04);
+}
+
 .skill-name {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+/* File listing style */
+.skill-name::before {
+  content: '- ';
+  color: var(--text-dim);
+}
+
+.skill-item:hover .skill-name {
   color: var(--text-primary);
-  font-size: 1.05rem;
-  font-family: 'Crimson Text', Georgia, serif;
 }
 
 .skill-proficiency {
   display: flex;
-  gap: 4px;
+  gap: 3px;
+  align-items: center;
 }
 
 .proficiency-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
   background: var(--border);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .proficiency-dot.filled {
-  background: var(--gold);
+  background: var(--green);
 }
 
 .skill-item:hover .proficiency-dot.filled {
-  box-shadow: 0 0 8px rgba(184, 149, 94, 0.6);
+  box-shadow: 0 0 6px rgba(63, 185, 80, 0.5);
 }
 
 /* Responsive Design */
 @media (max-width: 968px) {
   .skills-section {
-    padding: 80px 40px;
+    padding: 60px 40px;
   }
 
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 16px;
   }
 
   .section-title {
-    font-size: 2.5rem;
-  }
-
-  .skill-category {
-    padding: 35px;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .skills-section {
-    padding: 60px 20px;
+    padding: 50px 16px;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 
   .section-description {
-    font-size: 1rem;
-  }
-
-  .skill-category {
-    padding: 30px 25px;
+    font-size: 0.82rem;
   }
 
   .skill-category-title {
-    font-size: 1.4rem;
+    font-size: 0.78rem;
   }
 
   .skill-name {
-    font-size: 1rem;
+    font-size: 0.82rem;
   }
 }

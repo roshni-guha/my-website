@@ -4,11 +4,12 @@ import Hero from './Hero.jsx';
 import Projects from './Projects.jsx';
 import Skills from './Skills.jsx';
 
+const monoFont = "'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'Monaco', 'Consolas', monospace";
+
 function Home() {
   const [currentPage, setCurrentPage] = useState('home');
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Load theme preference from localStorage on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -17,7 +18,6 @@ function Home() {
     }
   }, []);
 
-  // Toggle theme
   const toggleTheme = () => {
     const newMode = !isDarkMode;
     setIsDarkMode(newMode);
@@ -31,6 +31,12 @@ function Home() {
     }
   };
 
+  const navBg = isDarkMode ? 'rgba(0, 17, 0, 0.97)' : 'rgba(13, 17, 23, 0.97)';
+  const navBorder = isDarkMode ? '#003d1a' : '#30363d';
+  const activeColor = isDarkMode ? '#00ff88' : '#3fb950';
+  const inactiveColor = isDarkMode ? '#006633' : '#484f58';
+  const hoverColor = isDarkMode ? '#00cc66' : '#8b949e';
+
   return (
     <div>
       <header style={{
@@ -38,13 +44,13 @@ function Home() {
         top: 0,
         left: 0,
         right: 0,
-        backgroundColor: isDarkMode ? 'rgba(13, 17, 23, 0.98)' : 'rgba(250, 247, 242, 0.95)',
-        backdropFilter: 'blur(16px)',
-        borderBottom: isDarkMode ? '1px solid #42526e' : '1px solid #d4c5b0',
+        backgroundColor: navBg,
+        backdropFilter: 'blur(12px)',
+        borderBottom: `1px solid ${navBorder}`,
         zIndex: 1000,
         transition: 'all 0.3s ease',
-        padding: '24px 60px',
-        boxShadow: '0 2px 12px rgba(30, 58, 95, 0.08)'
+        padding: '16px 60px',
+        boxShadow: '0 1px 8px rgba(0, 0, 0, 0.5)'
       }}>
         <nav style={{
           maxWidth: '1400px',
@@ -53,165 +59,103 @@ function Home() {
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
+          {/* Logo - terminal prompt style */}
           <button
             onClick={() => setCurrentPage('home')}
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: '1.6em',
-              fontWeight: '700',
-              color: '#1e3a5f',
+              fontFamily: monoFont,
+              fontSize: '0.95em',
+              fontWeight: '600',
+              color: activeColor,
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              letterSpacing: '2px',
-              textShadow: '0 1px 2px rgba(30, 58, 95, 0.1)'
+              transition: 'all 0.25s ease',
+              letterSpacing: '0.02em',
             }}
-            onMouseEnter={(e) => e.target.style.color = '#b8955e'}
-            onMouseLeave={(e) => e.target.style.color = '#1e3a5f'}
+            onMouseEnter={(e) => e.target.style.color = hoverColor}
+            onMouseLeave={(e) => e.target.style.color = activeColor}
           >
-            RG
+            rg@uw-madison:~$
           </button>
+
           <div style={{
             display: 'flex',
-            gap: '50px',
-            listStyle: 'none'
+            gap: '8px',
+            alignItems: 'center'
           }}>
-            <button
-              onClick={() => setCurrentPage('home')}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color: currentPage === 'home' ? (isDarkMode ? '#f5f1e8' : '#1e3a5f') : (isDarkMode ? '#c5bfb5' : '#5a5a5a'),
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: '1.05em',
-                fontWeight: currentPage === 'home' ? '600' : '500',
-                cursor: 'pointer',
-                transition: 'color 0.3s ease',
-                position: 'relative',
-                padding: '5px 0',
-                letterSpacing: '1.2px',
-                borderBottom: currentPage === 'home' ? (isDarkMode ? '2px solid #d4a574' : '2px solid #1e3a5f') : 'none'
-              }}
-              onMouseEnter={(e) => {
-                if (currentPage !== 'home') e.target.style.color = '#d4a574';
-              }}
-              onMouseLeave={(e) => {
-                if (currentPage !== 'home') e.target.style.color = isDarkMode ? '#c5bfb5' : '#5a5a5a';
-              }}
-            >
-              Home
-            </button>
-            <button
-              onClick={() => setCurrentPage('portfolio')}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color: currentPage === 'portfolio' ? (isDarkMode ? '#f5f1e8' : '#1e3a5f') : (isDarkMode ? '#c5bfb5' : '#5a5a5a'),
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: '1.05em',
-                fontWeight: currentPage === 'portfolio' ? '600' : '500',
-                cursor: 'pointer',
-                transition: 'color 0.3s ease',
-                position: 'relative',
-                padding: '5px 0',
-                letterSpacing: '1.2px',
-                borderBottom: currentPage === 'portfolio' ? (isDarkMode ? '2px solid #d4a574' : '2px solid #1e3a5f') : 'none'
-              }}
-              onMouseEnter={(e) => {
-                if (currentPage !== 'portfolio') e.target.style.color = '#d4a574';
-              }}
-              onMouseLeave={(e) => {
-                if (currentPage !== 'portfolio') e.target.style.color = isDarkMode ? '#c5bfb5' : '#5a5a5a';
-              }}
-            >
-              Experience
-            </button>
-            <button
-              onClick={() => setCurrentPage('projects')}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color: currentPage === 'projects' ? (isDarkMode ? '#f5f1e8' : '#1e3a5f') : (isDarkMode ? '#c5bfb5' : '#5a5a5a'),
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: '1.05em',
-                fontWeight: currentPage === 'projects' ? '600' : '500',
-                cursor: 'pointer',
-                transition: 'color 0.3s ease',
-                position: 'relative',
-                padding: '5px 0',
-                letterSpacing: '1.2px',
-                borderBottom: currentPage === 'projects' ? (isDarkMode ? '2px solid #d4a574' : '2px solid #1e3a5f') : 'none'
-              }}
-              onMouseEnter={(e) => {
-                if (currentPage !== 'projects') e.target.style.color = '#d4a574';
-              }}
-              onMouseLeave={(e) => {
-                if (currentPage !== 'projects') e.target.style.color = isDarkMode ? '#c5bfb5' : '#5a5a5a';
-              }}
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => setCurrentPage('skills')}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color: currentPage === 'skills' ? (isDarkMode ? '#f5f1e8' : '#1e3a5f') : (isDarkMode ? '#c5bfb5' : '#5a5a5a'),
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: '1.05em',
-                fontWeight: currentPage === 'skills' ? '600' : '500',
-                cursor: 'pointer',
-                transition: 'color 0.3s ease',
-                position: 'relative',
-                padding: '5px 0',
-                letterSpacing: '1.2px',
-                borderBottom: currentPage === 'skills' ? (isDarkMode ? '2px solid #d4a574' : '2px solid #1e3a5f') : 'none'
-              }}
-              onMouseEnter={(e) => {
-                if (currentPage !== 'skills') e.target.style.color = '#d4a574';
-              }}
-              onMouseLeave={(e) => {
-                if (currentPage !== 'skills') e.target.style.color = isDarkMode ? '#c5bfb5' : '#5a5a5a';
-              }}
-            >
-              Skills
-            </button>
+            {[
+              { key: 'home', label: 'home' },
+              { key: 'portfolio', label: 'experience' },
+              { key: 'projects', label: 'projects' },
+              { key: 'skills', label: 'skills' },
+            ].map(({ key, label }) => (
+              <button
+                key={key}
+                onClick={() => setCurrentPage(key)}
+                style={{
+                  background: currentPage === key ? (isDarkMode ? 'rgba(0, 255, 136, 0.06)' : 'rgba(63, 185, 80, 0.08)') : 'transparent',
+                  border: currentPage === key ? `1px solid ${activeColor}` : '1px solid transparent',
+                  color: currentPage === key ? activeColor : inactiveColor,
+                  fontFamily: monoFont,
+                  fontSize: '0.82em',
+                  fontWeight: currentPage === key ? '600' : '400',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  padding: '6px 14px',
+                  borderRadius: '4px',
+                  letterSpacing: '0.02em',
+                }}
+                onMouseEnter={(e) => {
+                  if (currentPage !== key) {
+                    e.currentTarget.style.color = hoverColor;
+                    e.currentTarget.style.borderColor = navBorder;
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (currentPage !== key) {
+                    e.currentTarget.style.color = inactiveColor;
+                    e.currentTarget.style.borderColor = 'transparent';
+                  }
+                }}
+              >
+                ./{label}
+              </button>
+            ))}
+
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               style={{
                 background: 'transparent',
-                border: isDarkMode ? '2px solid #d4a574' : '2px solid #b8955e',
-                color: isDarkMode ? '#d4a574' : '#b8955e',
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: '0.95em',
-                fontWeight: '600',
+                border: `1px solid ${navBorder}`,
+                color: inactiveColor,
+                fontFamily: monoFont,
+                fontSize: '0.78em',
+                fontWeight: '500',
                 cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                padding: '8px 16px',
-                borderRadius: '8px',
-                letterSpacing: '1px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                marginLeft: '20px'
+                transition: 'all 0.25s ease',
+                padding: '6px 14px',
+                borderRadius: '4px',
+                letterSpacing: '0.04em',
+                marginLeft: '12px',
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = 'rgba(184, 149, 94, 0.1)';
-                e.target.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.borderColor = activeColor;
+                e.currentTarget.style.color = activeColor;
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = 'transparent';
-                e.target.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = navBorder;
+                e.currentTarget.style.color = inactiveColor;
               }}
             >
-              {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+              {isDarkMode ? '[modern]' : '[matrix]'}
             </button>
           </div>
         </nav>
       </header>
 
-      <main style={{ marginTop: '80px' }}>
+      <main style={{ marginTop: '65px' }}>
         {currentPage === 'home' && <Hero />}
         {currentPage === 'portfolio' && <Portfolio />}
         {currentPage === 'projects' && <Projects />}
