@@ -1,0 +1,279 @@
+/* Terminal Page Layout */
+.terminal-page {
+  display: flex;
+  gap: 20px;
+  padding: 40px 60px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 65px);
+  box-sizing: border-box;
+}
+
+/* Terminal Window */
+.terminal-window {
+  flex: 1;
+  min-width: 0;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Title Bar */
+.terminal-titlebar {
+  background: #1c2128;
+  border-bottom: 1px solid #30363d;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.terminal-title-text {
+  font-size: 0.78rem;
+  color: #484f58;
+  letter-spacing: 0.04em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Output Area */
+.terminal-output {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  min-height: 0;
+}
+
+.terminal-output::-webkit-scrollbar {
+  width: 4px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 2px;
+}
+
+/* Output Lines */
+.t-line {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #8b949e;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.t-line.t-prompt {
+  color: #e6edf3;
+}
+
+.t-line.t-empty {
+  height: 1rem;
+}
+
+/* Color classes */
+.tc-green { color: #3fb950; }
+.tc-cyan { color: #58a6ff; }
+.tc-orange { color: #e3b341; }
+.tc-red { color: #f85149; }
+.tc-dim { color: #484f58; }
+.tc-purple { color: #a371f7; }
+.tc-white { color: #e6edf3; }
+
+/* Input Row */
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px 16px;
+  border-top: 1px solid #1c2128;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.terminal-prompt-display {
+  font-size: 0.875rem;
+  font-family: 'JetBrains Mono', monospace;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+
+.prompt-user { color: #3fb950; }
+.prompt-sep { color: #484f58; }
+.prompt-host { color: #58a6ff; }
+.prompt-path { color: #a371f7; }
+.prompt-dollar { color: #e6edf3; }
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e6edf3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  caret-color: #3fb950;
+}
+
+.terminal-input::placeholder {
+  color: #484f58;
+}
+
+/* Copilot Panel */
+.copilot-panel {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.copilot-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3fb950;
+  margin-bottom: 4px;
+}
+
+.copilot-header::before {
+  content: '// ';
+  color: #484f58;
+}
+
+.copilot-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.copilot-card-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #484f58;
+  margin-bottom: 12px;
+}
+
+.copilot-card-title::before {
+  content: '> ';
+  color: #3fb950;
+}
+
+.copilot-tip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: #8b949e;
+}
+
+/* Suggestion buttons */
+.copilot-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.copilot-suggestion {
+  background: #1c2128;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 7px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #8b949e;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.copilot-suggestion:hover {
+  background: rgba(63, 185, 80, 0.06);
+  border-color: #3fb950;
+  color: #3fb950;
+}
+
+.copilot-suggestion::before {
+  content: '$ ';
+  color: #3fb950;
+}
+
+/* Command reference */
+.cmd-ref-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cmd-ref-item {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.cmd-ref-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #58a6ff;
+  min-width: 60px;
+  font-weight: 600;
+}
+
+.cmd-ref-desc {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #484f58;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .terminal-page {
+    padding: 30px 40px 50px;
+  }
+
+  .copilot-panel {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .terminal-page {
+    flex-direction: column;
+    padding: 20px 20px 40px;
+  }
+
+  .copilot-panel {
+    width: 100%;
+  }
+}

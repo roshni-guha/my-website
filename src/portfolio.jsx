@@ -25,7 +25,7 @@ function Portfolio() {
       title: 'Project Intern',
       company: 'Royal Bank of Canada Wealth Management',
       period: 'Sept. 2025 - Present',
-      status: 'ACTIVE',
+      status: 'COMPLETED',
       description: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment\nfeeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers.\nBuilding a functional MVP in Python/Streamlit that retrieves, summarizes, and visualizes multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators), reducing manual research time by over 50%.',
       technologies: ['Python', 'JavaScript', 'HTML', 'LLM API', 'Yahoo Finance', 'Data Scraping', 'Sentiment Analysis'],
       metrics: [
@@ -39,7 +39,7 @@ function Portfolio() {
       title: 'Peer Mentor',
       company: 'University of Wisconsin - Madison',
       period: 'June 2025 - Present',
-      status: 'ONGOING',
+      status: 'ACTIVE',
       description: 'Help 600+ students understand object-oriented programming, data structures, recursion, and algorithm complexity during office hours and support development of debugging skills during the development of complex weekly projects.\nPromoted after mentoring Programming I class over the summer, leading 4 labs and office hours for 45+ students with\nminimal programming experience in concepts such as control flow, data types, functions and debugging',
       technologies: ['Mentoring', 'Teaching', 'Debugging', 'Algorithm Design', 'Data Structures'],
       metrics: [

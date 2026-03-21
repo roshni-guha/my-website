@@ -1,41 +1,20 @@
-import { useState, useEffect } from 'react';
 import Portfolio from './portfolio.jsx';
 import Hero from './Hero.jsx';
 import Projects from './Projects.jsx';
 import Skills from './Skills.jsx';
+import Terminal from './Terminal.jsx';
+import { useState } from 'react';
 
 const monoFont = "'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'Monaco', 'Consolas', monospace";
 
+const navBg = 'rgba(13, 17, 23, 0.97)';
+const navBorder = '#30363d';
+const activeColor = '#3fb950';
+const inactiveColor = '#484f58';
+const hoverColor = '#8b949e';
+
 function Home() {
   const [currentPage, setCurrentPage] = useState('home');
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDarkMode(true);
-      document.body.classList.add('dark-mode');
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-
-    if (newMode) {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-    }
-  };
-
-  const navBg = isDarkMode ? 'rgba(0, 17, 0, 0.97)' : 'rgba(13, 17, 23, 0.97)';
-  const navBorder = isDarkMode ? '#003d1a' : '#30363d';
-  const activeColor = isDarkMode ? '#00ff88' : '#3fb950';
-  const inactiveColor = isDarkMode ? '#006633' : '#484f58';
-  const hoverColor = isDarkMode ? '#00cc66' : '#8b949e';
 
   return (
     <div>
@@ -89,12 +68,13 @@ function Home() {
               { key: 'portfolio', label: 'experience' },
               { key: 'projects', label: 'projects' },
               { key: 'skills', label: 'skills' },
+              { key: 'terminal', label: 'terminal' },
             ].map(({ key, label }) => (
               <button
                 key={key}
                 onClick={() => setCurrentPage(key)}
                 style={{
-                  background: currentPage === key ? (isDarkMode ? 'rgba(0, 255, 136, 0.06)' : 'rgba(63, 185, 80, 0.08)') : 'transparent',
+                  background: currentPage === key ? 'rgba(63, 185, 80, 0.08)' : 'transparent',
                   border: currentPage === key ? `1px solid ${activeColor}` : '1px solid transparent',
                   color: currentPage === key ? activeColor : inactiveColor,
                   fontFamily: monoFont,
@@ -122,44 +102,16 @@ function Home() {
                 ./{label}
               </button>
             ))}
-
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              style={{
-                background: 'transparent',
-                border: `1px solid ${navBorder}`,
-                color: inactiveColor,
-                fontFamily: monoFont,
-                fontSize: '0.78em',
-                fontWeight: '500',
-                cursor: 'pointer',
-                transition: 'all 0.25s ease',
-                padding: '6px 14px',
-                borderRadius: '4px',
-                letterSpacing: '0.04em',
-                marginLeft: '12px',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = activeColor;
-                e.currentTarget.style.color = activeColor;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = navBorder;
-                e.currentTarget.style.color = inactiveColor;
-              }}
-            >
-              {isDarkMode ? '[modern]' : '[matrix]'}
-            </button>
           </div>
         </nav>
       </header>
 
       <main style={{ marginTop: '65px' }}>
-        {currentPage === 'home' && <Hero />}
+        {currentPage === 'home' && <Hero onOpenTerminal={() => setCurrentPage('terminal')} />}
         {currentPage === 'portfolio' && <Portfolio />}
         {currentPage === 'projects' && <Projects />}
         {currentPage === 'skills' && <Skills />}
+        {currentPage === 'terminal' && <Terminal />}
       </main>
     </div>
   );
