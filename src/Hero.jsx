@@ -57,7 +57,7 @@ function Hero({ onOpenTerminal }) {
 
           <div className="credential-item">
             <h3 className="credential-title">Current Status</h3>
-            <p className="credential-institution">Spring semester! Enjoy classes!</p>
+            <p className="credential-institution">Summer coming soon! One month more!</p>
           </div>
         </div>
 
