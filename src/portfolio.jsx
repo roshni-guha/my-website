@@ -8,20 +8,62 @@ function Portfolio() {
   const experiences = [
     {
       id: 1,
-      title: 'Researcher - Quantitative Finance',
-      company: 'Capitalfund Investment Fund, Wisconsin School of Business',
-      period: 'Sept. 2025 - Present',
+      title: 'AI Engineering Intern',
+      company: 'Voyager AI',
+      period: 'June 2026 – August 2026',
       status: 'ACTIVE',
-      description: 'Support development of strategies for managing a portfolio of $1M+ as a part of a student-managed CapitalFund Investment Team using Interactive Brokers, Docker and automated trading tools.\nBuild and refine the production tech stack and data flow, transforming Model State into Aggregate Optimized Positions for live portfolio execution. \nDeveloped model prototypes, including a momentum-based model for SPY with an MVO framework and a reinforcement learning model for global equities, as part of the team\'s systematic strategy research.',
-      technologies: ['Python', 'Google Cloud Shell', 'Excel', 'Interactive Brokers', 'Docker', 'PyTorch'],
+      description: 'Building OCR and document classification pipelines in Python on AWS for a secure AI platform automating financial document processing and AML compliance for institutional clients.\nDeveloping RAG pipelines and LLM orchestration with auditability infrastructure ensuring regulatory traceability of AI outputs in production.',
+      technologies: ['Python', 'AWS', 'OCR', 'RAG', 'LLM Orchestration', 'AML Compliance'],
       metrics: [
-        { value: '$1M+', label: 'Portfolio Managed' },
-        { value: '50%+', label: 'Research Efficiency' },
-        { value: 'Live', label: 'Trading System' }
+        { value: 'AWS', label: 'Cloud Platform' },
+        { value: 'RAG', label: 'Pipeline Type' },
+        { value: 'AML', label: 'Compliance Focus' }
       ]
     },
     {
       id: 2,
+      title: 'Machine Learning Researcher',
+      company: 'Human Factors and Machine Learning Lab, UW–Madison',
+      period: 'May 2026 – August 2026',
+      status: 'ACTIVE',
+      description: 'Conducting research at a lab previously sponsored by Waymo and NSF, now supported by AmFam Insurance, modeling human-AV interaction using POMDP to predict driver behavior based on beliefs about autonomous vehicle intent.\nBuilding a CARLA simulation environment to model human and autonomous vehicle interaction, generating synthetic training data for probabilistic driver behavior models.',
+      technologies: ['Python', 'CARLA', 'POMDP', 'Probabilistic Modeling', 'Simulation', 'PyTorch'],
+      metrics: [
+        { value: 'POMDP', label: 'Modeling Framework' },
+        { value: 'CARLA', label: 'Simulation Env' },
+        { value: 'AmFam', label: 'Sponsor' }
+      ]
+    },
+    {
+      id: 3,
+      title: 'Systems Analyst Intern',
+      company: 'Wisconsin Department of Revenue',
+      period: 'May 2026 – August 2026',
+      status: 'ACTIVE',
+      description: 'Analyzing and documenting dataflow across Oracle RDBMS-backed taxation systems using Visio and Power BI; mapping system interdependencies and producing technical documentation for infrastructure modernization.',
+      technologies: ['Oracle RDBMS', 'Power BI', 'Visio', 'SQL', 'Technical Documentation'],
+      metrics: [
+        { value: 'Oracle', label: 'Database' },
+        { value: 'Power BI', label: 'Visualization' },
+        { value: 'Gov', label: 'Sector' }
+      ]
+    },
+    {
+      id: 4,
+      title: 'Quantitative Developer',
+      company: 'CapitalFund Investment Team',
+      period: 'Sept 2025 – Present',
+      status: 'ACTIVE',
+      description: 'Contribute to systematic data pipelines on GCP (BigQuery, Cloud Run) ingesting FactSet financial data with Pydantic schema validation; work within a production trading system for live execution of a $1M+ portfolio.\nDeveloped a momentum-based fixed income allocator with cross-asset benchmark filtering and a drawdown-differential state machine override; Sharpe improved 61% on investment grade credit via the override mechanism.',
+      technologies: ['Python', 'GCP', 'BigQuery', 'Cloud Run', 'FactSet', 'Pydantic', 'Docker'],
+      metrics: [
+        { value: '$1M+', label: 'Portfolio Managed' },
+        { value: '61%', label: 'Sharpe Improvement' },
+        { value: 'Live', label: 'Trading System' }
+      ]
+    },
+    {
+      id: 5,
       title: 'Project Intern',
       company: 'Royal Bank of Canada Wealth Management',
       period: 'Sept. 2025 - Present',
@@ -35,11 +77,11 @@ function Portfolio() {
       ]
     },
     {
-      id: 3,
+      id: 6,
       title: 'Peer Mentor',
       company: 'University of Wisconsin - Madison',
       period: 'June 2025 - Present',
-      status: 'ACTIVE',
+      status: 'COMPLETED',
       description: 'Help 600+ students understand object-oriented programming, data structures, recursion, and algorithm complexity during office hours and support development of debugging skills during the development of complex weekly projects.\nPromoted after mentoring Programming I class over the summer, leading 4 labs and office hours for 45+ students with\nminimal programming experience in concepts such as control flow, data types, functions and debugging',
       technologies: ['Mentoring', 'Teaching', 'Debugging', 'Algorithm Design', 'Data Structures'],
       metrics: [
@@ -49,7 +91,7 @@ function Portfolio() {
       ]
     },
     {
-      id: 4,
+      id: 7,
       title: 'Summer Data Analyst Intern',
       company: 'Al Khayat Contracting LLC, Dubai UAE',
       period: 'July 2023 - July 2023',
@@ -102,26 +144,26 @@ function Portfolio() {
     },
     {
       id: 2,
+      title: 'International Olympiad UAE Top 10 in Five Subjects',
+      event: 'International Olympiad Organization',
+      period: 'January 2023',
+      description: 'Ranked in UAE Top 10 for Chemistry (#4), Physics (#5), Mathematics (#4), English (#7), and Cyber (#4).',
+    },
+    {
+      id: 3,
       title: 'Grand Awardee – 10th India Middle East Education Awards 2024',
       event: 'Yallaschools UAE',
       period: 'June 2024',
       description: 'Recognized for academic excellence among top CBSE/ISC Grade 12 achievers across over 60 Indian schools in the Middle East, nominated by the school and selected from over 10,000 students across six countries.',
     },
     {
-      id: 3,
+      id: 4,
       title: 'Most Innovative Award by Samsung',
       event: 'Project Design Space, Dubai Institute of Design and Innovation',
       period: 'October 2023',
       description: 'Developed a sustainable cat food dispenser model utilizing recycled Samsung TV boxes to promote environmental responsibility and minimize cardboard waste.',
       file: '/PDS Manual.pdf',
       link: 'https://drive.google.com/file/d/1zQwZmydhKXgpoeiV6dou6mGmdByB_aMN/view?usp=share_link'
-    },
-    {
-      id: 4,
-      title: 'International Olympiad UAE Top 10 in Five Subjects',
-      event: 'International Olympiad Organization',
-      period: 'January 2023',
-      description: 'Ranked in UAE Top 10 for Chemistry (#4), Physics (#5), Mathematics (#4), English (#7), and Cyber (#4).',
     },
     {
       id: 5,
@@ -152,7 +194,7 @@ function Portfolio() {
       id: 1,
       title: 'Vice President for Software Development - Cardinal Trading Group',
       category: 'Leadership',
-      period: 'Jan 2026 - Present',
+      period: 'Jan 2026 - May 2026',
       description: 'Lead organization of 200+ members, organizing tech talks, workshops, and hackathons.',
     },
     {
@@ -168,41 +210,48 @@ function Portfolio() {
   const events = [
     {
       id: 1,
-      title: 'Emerging Leaders Series - Dallas Engineering',
-      organization: 'Goldman Sachs',
-      period: 'April 2026',
-      description: 'Upcoming in-person event in Dallas for selected engineering students to network with Goldman Sachs leaders and explore career opportunities in technology and finance.',
+      title: 'Future Innovators Series',
+      organization: 'Blackstone',
+      period: 'May 2026 - Present',
+      description: 'Participating in a mentorship pod led by Blackstone industry professionals working in technology and innovation, gaining insights into career pathways and emerging trends at the intersection of finance and technology.',
     },
     {
       id: 2,
+      title: 'Emerging Leaders Series - Dallas Engineering',
+      organization: 'Goldman Sachs',
+      period: 'April 2026',
+      description: 'In-person event in Dallas for selected engineering students to network with Goldman Sachs leaders and explore career opportunities in technology and finance.',
+    },
+    {
+      id: 3,
       title: 'Virtual Insight Series',
       organization: 'Goldman Sachs',
       period: 'May - June 2025',
       description: 'Completed four-week program exploring firm divisions and career pathways',
     },
     {
-      id: 3,
+      id: 4,
       title: 'Sophomore Showcase',
       organization: 'JP Morgan Chase',
       period: 'April 2025',
       description: 'Participated in a virtual event designed for second-year students to explore career opportunities and network with professionals at JP Morgan Chase.',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Women in Wealth: LIFT - College Leadership Summit',
       organization: 'Morgan Stanley',
       period: 'April 2025',
       description: 'Attended a virtual leadership summit focused on empowering women in finance through workshops, networking, and skill-building sessions.',
     },
     {
-      id: 3,
+      id: 6,
       title: 'Women\'s Possibilities Summit',
       organization: 'Goldman Sachs',
       period: 'January - December 2025',
       description: 'Chosen among 14000+ to participate in a year-long program focused on leadership development, networking, and career growth for women',
     },
     {
-      id: 4,
+      id: 7,
       title: 'Freshman Focus',
       organization: 'JP Morgan Chase',
       period: 'April 2025',

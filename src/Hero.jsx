@@ -47,7 +47,7 @@ function Hero({ onOpenTerminal }) {
 
           <div className="credential-item">
             <h3 className="credential-title">GPA</h3>
-            <p className="credential-institution">3.878 / 4.0</p>
+            <p className="credential-institution">3.84 / 4.0</p>
           </div>
 
           <div className="credential-item">
@@ -57,7 +57,7 @@ function Hero({ onOpenTerminal }) {
 
           <div className="credential-item">
             <h3 className="credential-title">Current Status</h3>
-            <p className="credential-institution">Summer coming soon! One month more!</p>
+            <p className="credential-institution">Biking in Summer is the most fun!</p>
           </div>
         </div>
 
@@ -68,7 +68,6 @@ function Hero({ onOpenTerminal }) {
             I'm a sophomore at UW-Madison pursuing dual degrees in Computer Science and Mathematics.
             My passion lies at the intersection of software engineering, quantitative finance, and machine learning.
             I love building scalable systems, developing algorithmic trading strategies, and applying ML to solve real-world problems.
-            Currently seeking Summer 2026 opportunities in Software Engineering, Quantitative Development, or Machine Learning roles.
           </p>
         </div>
 
@@ -107,7 +106,11 @@ function Hero({ onOpenTerminal }) {
 
           <div className="stat-item">
             <div className="stat-label">Current Role</div>
-            <div className="stat-value">Project Intern @ RBC, Quant Researcher @ UW-Madison, Peer Mentor @ UW-Madison</div>
+            <div className="stat-value">
+              AI Engineering Intern @ Voyager AI<br />
+              Systems Analyst Intern @ DOR<br />
+              ML Researcher @ HFML
+            </div>
           </div>
 
           <div className="stat-item">

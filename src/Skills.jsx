@@ -6,31 +6,54 @@ function Skills() {
       title: 'Programming Languages',
       skills: [
         { name: 'Python', proficiency: 5 },
-        // { name: 'C++', proficiency: 5 },
         { name: 'Java', proficiency: 4 },
         { name: 'R', proficiency: 4 },
         { name: 'SQL', proficiency: 4 },
-        { name: 'JavaScript', proficiency: 4 }
+        { name: 'JavaScript', proficiency: 4 },
+        { name: 'C++', proficiency: 4 },
+        { name: 'C', proficiency: 3 },
+        { name: 'Bash', proficiency: 3 },
+        { name: 'HTML', proficiency: 4 },
+        { name: 'CSS', proficiency: 3 },
       ]
     },
     {
-      title: 'Machine Learning',
+      title: 'Machine Learning & AI',
       skills: [
         { name: 'PyTorch', proficiency: 4 },
         { name: 'TensorFlow', proficiency: 4 },
         { name: 'scikit-learn', proficiency: 5 },
         { name: 'Pandas', proficiency: 5 },
-        { name: 'NumPy', proficiency: 5 }
+        { name: 'NumPy', proficiency: 5 },
+        { name: 'Polars', proficiency: 3 },
+        { name: 'Pydantic', proficiency: 4 },
+        { name: 'CARLA', proficiency: 3 },
+        { name: 'Statistical Learning', proficiency: 4 },
+        { name: 'Reinforcement Learning', proficiency: 3 },
+        { name: 'POMDP', proficiency: 3 },
       ]
     },
     {
-      title: 'Systems Engineering',
+      title: 'Frameworks & Tools',
       skills: [
         { name: 'Docker', proficiency: 4 },
-        // { name: 'Kubernetes', proficiency: 3 },
         { name: 'Git', proficiency: 5 },
-        // { name: 'Linux', proficiency: 4 },
-        // { name: 'AWS/GCP', proficiency: 4 }
+        { name: 'GitHub Actions', proficiency: 3 },
+        { name: 'React', proficiency: 4 },
+        { name: 'FastAPI', proficiency: 4 },
+        { name: 'Node.js', proficiency: 3 },
+        { name: 'Linux', proficiency: 4 },
+        { name: 'Apache Spark', proficiency: 3 },
+      ]
+    },
+    {
+      title: 'Cloud & Data',
+      skills: [
+        { name: 'AWS', proficiency: 3 },
+        { name: 'GCP', proficiency: 4 },
+        { name: 'BigQuery', proficiency: 4 },
+        { name: 'HDFS', proficiency: 3 },
+        { name: 'Power BI', proficiency: 3 },
       ]
     },
     {
@@ -39,7 +62,7 @@ function Skills() {
         { name: 'Interactive Brokers', proficiency: 4 },
         { name: 'Yahoo Finance API', proficiency: 5 },
         { name: 'Statistical Modeling', proficiency: 4 },
-        { name: 'Time Series Analysis', proficiency: 4 }
+        { name: 'Time Series Analysis', proficiency: 4 },
       ]
     }
   ];

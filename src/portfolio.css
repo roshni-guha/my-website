@@ -288,6 +288,13 @@
   font-weight: 600;
 }
 
+.status-upcoming {
+  background: rgba(255, 183, 77, 0.08);
+  border: 1px solid #ffb74d;
+  color: #ffb74d;
+  font-weight: 600;
+}
+
 .status-category {
   background: rgba(163, 113, 247, 0.08);
   border: 1px solid var(--purple);
