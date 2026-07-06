@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './portfolio.css';
 
 function Portfolio() {
@@ -10,92 +10,106 @@ function Portfolio() {
       id: 1,
       title: 'AI Engineering Intern',
       company: 'Voyager AI',
+      location: 'Wauwatosa, WI',
       period: 'June 2026 – August 2026',
       status: 'ACTIVE',
-      description: 'Building OCR and document classification pipelines in Python on AWS for a secure AI platform automating financial document processing and AML compliance for institutional clients.\nDeveloping RAG pipelines and LLM orchestration with auditability infrastructure ensuring regulatory traceability of AI outputs in production.',
-      technologies: ['Python', 'AWS', 'OCR', 'RAG', 'LLM Orchestration', 'AML Compliance'],
+      logo: '/logos/VoyagerAI-logo.png',
+      description: 'Reduced FDIC API lookup latency by 96% and institution ID resolution by 95% through Redis caching, automating institution onboarding from the FDIC BankFind Suite and NCUA APIs to eliminate manual data entry.\nBuilt automated end-to-end testing infrastructure using Playwright and Selenium covering the full feature surface of the platform, giving the engineering team confidence to ship to production faster and with fewer regressions.',
+      technologies: ['Python', 'Redis', 'Playwright', 'Selenium', 'FDIC BankFind API', 'NCUA API'],
       metrics: [
-        { value: 'AWS', label: 'Cloud Platform' },
-        { value: 'RAG', label: 'Pipeline Type' },
-        { value: 'AML', label: 'Compliance Focus' }
+        { value: '96%', label: 'Latency Reduction' },
+        { value: '95%', label: 'ID Resolution' },
+        { value: 'E2E', label: 'Test Coverage' }
       ]
     },
     {
       id: 2,
       title: 'Machine Learning Researcher',
       company: 'Human Factors and Machine Learning Lab, UW–Madison',
+      location: 'Madison, WI',
       period: 'May 2026 – August 2026',
       status: 'ACTIVE',
-      description: 'Conducting research at a lab previously sponsored by Waymo and NSF, now supported by AmFam Insurance, modeling human-AV interaction using POMDP to predict driver behavior based on beliefs about autonomous vehicle intent.\nBuilding a CARLA simulation environment to model human and autonomous vehicle interaction, generating synthetic training data for probabilistic driver behavior models.',
-      technologies: ['Python', 'CARLA', 'POMDP', 'Probabilistic Modeling', 'Simulation', 'PyTorch'],
+      logo: '/logos/ml_research.jpeg',
+      description: 'Engineered CARLA simulation environments to generate synthetic training data for probabilistic driver behavior models; contributing to POMDP-based autonomous driving research funded by NSF and AmFam Insurance.\nDeveloped active inference models of driver behavior using the free energy principle to predict how humans respond to vehicle automation handoffs, validated against real-world naturalistic driving data.',
+      technologies: ['Python', 'CARLA', 'POMDP', 'Active Inference', 'PyTorch', 'Free Energy Principle'],
       metrics: [
         { value: 'POMDP', label: 'Modeling Framework' },
-        { value: 'CARLA', label: 'Simulation Env' },
-        { value: 'AmFam', label: 'Sponsor' }
+        { value: 'NSF', label: 'Funded By' },
+        { value: 'CARLA', label: 'Simulation Env' }
       ]
     },
     {
       id: 3,
       title: 'Systems Analyst Intern',
       company: 'Wisconsin Department of Revenue',
+      location: 'Madison, WI',
       period: 'May 2026 – August 2026',
       status: 'ACTIVE',
-      description: 'Analyzing and documenting dataflow across Oracle RDBMS-backed taxation systems using Visio and Power BI; mapping system interdependencies and producing technical documentation for infrastructure modernization.',
-      technologies: ['Oracle RDBMS', 'Power BI', 'Visio', 'SQL', 'Technical Documentation'],
+      logo: '/logos/wirevenue_logo.jpeg',
+      description: 'Analyzed and documented dataflow across a 20-year-old Oracle RDBMS property tax system spanning 4 departments, 14 transactions, and 115 tables; produced technical documentation to support a planned infrastructure overhaul.',
+      technologies: ['Oracle RDBMS', 'SQL', 'Power BI', 'Visio', 'Technical Documentation'],
       metrics: [
-        { value: 'Oracle', label: 'Database' },
-        { value: 'Power BI', label: 'Visualization' },
-        { value: 'Gov', label: 'Sector' }
+        { value: '115', label: 'Tables Mapped' },
+        { value: '4', label: 'Departments' },
+        { value: '20 yrs', label: 'Legacy System' }
       ]
     },
     {
       id: 4,
       title: 'Quantitative Developer',
       company: 'CapitalFund Investment Team',
+      location: 'Madison, WI',
       period: 'Sept 2025 – Present',
       status: 'ACTIVE',
-      description: 'Contribute to systematic data pipelines on GCP (BigQuery, Cloud Run) ingesting FactSet financial data with Pydantic schema validation; work within a production trading system for live execution of a $1M+ portfolio.\nDeveloped a momentum-based fixed income allocator with cross-asset benchmark filtering and a drawdown-differential state machine override; Sharpe improved 61% on investment grade credit via the override mechanism.',
-      technologies: ['Python', 'GCP', 'BigQuery', 'Cloud Run', 'FactSet', 'Pydantic', 'Docker'],
+      logo: '/logos/hawk_center_for_investment_analysis_logo.jpeg',
+      description: 'Achieved 13.3% annualized return and Sharpe 0.75 on 11 years of held-out data by developing a reinforcement learning model for a student-run $1M+ portfolio; cut training time by 60% through vectorized preprocessing and O(1) hash map lookups replacing repeated DataFrame scans.\nContributed to production infrastructure including GCP data pipelines, a Rust-based backtesting engine, and live trade execution via IB Gateway, supported by automated CI/CD and containerized deployment.',
+      technologies: ['Python', 'GCP', 'Rust', 'IB Gateway', 'Docker', 'CI/CD', 'BigQuery'],
       metrics: [
-        { value: '$1M+', label: 'Portfolio Managed' },
-        { value: '61%', label: 'Sharpe Improvement' },
-        { value: 'Live', label: 'Trading System' }
+        { value: '13.3%', label: 'Annualized Return' },
+        { value: '0.75', label: 'Sharpe Ratio' },
+        { value: '$1M+', label: 'Portfolio' }
       ]
     },
     {
       id: 5,
       title: 'Project Intern',
       company: 'Royal Bank of Canada Wealth Management',
-      period: 'Sept. 2025 - Present',
+      location: 'Madison, WI',
+      period: 'Sept 2025 – Jan 2026',
       status: 'COMPLETED',
-      description: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment\nfeeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers.\nBuilding a functional MVP in Python/Streamlit that retrieves, summarizes, and visualizes multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators), reducing manual research time by over 50%.',
-      technologies: ['Python', 'JavaScript', 'HTML', 'LLM API', 'Yahoo Finance', 'Data Scraping', 'Sentiment Analysis'],
+      logo: '/logos/RBC.png',
+      description: 'Built a full-stack equity research tool in Python and Node.js that aggregated signals from financial APIs, Reddit, and news feeds; designed RESTful API endpoints and a data normalization layer, reducing analyst research time by over 50%.',
+      technologies: ['Python', 'Node.js', 'RESTful API', 'Yahoo Finance API', 'Reddit API', 'News APIs'],
       metrics: [
-        { value: '20+', label: 'Portfolio Managers' },
         { value: '50%', label: 'Time Saved' },
-        { value: 'Multi', label: 'Source Analysis' }
+        { value: 'REST', label: 'API Design' },
+        { value: 'Multi', label: 'Source Signals' }
       ]
     },
     {
       id: 6,
-      title: 'Peer Mentor',
-      company: 'University of Wisconsin - Madison',
-      period: 'June 2025 - Present',
+      title: 'Undergraduate Teaching Assistant',
+      company: 'University of Wisconsin – Madison',
+      location: 'Madison, WI',
+      period: 'June 2025 – Present',
       status: 'COMPLETED',
-      description: 'Help 600+ students understand object-oriented programming, data structures, recursion, and algorithm complexity during office hours and support development of debugging skills during the development of complex weekly projects.\nPromoted after mentoring Programming I class over the summer, leading 4 labs and office hours for 45+ students with\nminimal programming experience in concepts such as control flow, data types, functions and debugging',
-      technologies: ['Mentoring', 'Teaching', 'Debugging', 'Algorithm Design', 'Data Structures'],
+      logo: '/logos/uw_CS.jpeg',
+      description: 'Guided 600+ students through data structures, asymptotic analysis, recursion, graph algorithms, and OOP; promoted after leading an introductory programming course for 45+ students earlier that summer.',
+      technologies: ['Data Structures', 'Algorithms', 'OOP', 'Graph Theory', 'Asymptotic Analysis'],
       metrics: [
-        { value: '600+', label: 'Students Helped' },
-        { value: '4', label: 'Weekly Labs' },
-        { value: 'Promoted', label: 'After Summer' }
+        { value: '600+', label: 'Students' },
+        { value: '45+', label: 'Intro Course' },
+        { value: 'Promoted', label: 'Recognition' }
       ]
     },
     {
       id: 7,
       title: 'Summer Data Analyst Intern',
       company: 'Al Khayat Contracting LLC, Dubai UAE',
-      period: 'July 2023 - July 2023',
+      period: 'July 2023',
       status: 'COMPLETED',
+      logo: null,
+      logoInitials: 'AK',
       description: 'Assisted senior analysts in compiling and interpreting payment, working capital, and tender data, improving reporting workflows and reducing turnaround times by ~20%, supported by SQL knowledge gained through prior training.',
       technologies: ['Data Analysis', 'Excel', 'SQL', 'Data Visualization'],
       metrics: [
@@ -267,6 +281,18 @@ function Portfolio() {
     { id: 'events', label: 'Events' }
   ];
 
+  useEffect(() => {
+    if (activeSection !== 'experiences') return;
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.timeline-entry').forEach(el => observer.observe(el));
+    }, 60);
+    return () => { clearTimeout(timer); observer.disconnect(); };
+  }, [activeSection]);
+
   return (
     <div className="portfolio-container">
 
@@ -283,38 +309,69 @@ function Portfolio() {
         ))}
       </nav>
 
-      {/* Experiences Section */}
+      {/* Experiences Timeline */}
       {activeSection === 'experiences' && (
         <section className="experiences-section">
+          <span className="ghost-title">Experience</span>
           <div className="section-header">
             <h2 className="section-number">01 | PORTFOLIO</h2>
             <div className="section-divider"></div>
           </div>
-          <div className="experiences-scroll">
-            {experiences.map((experience) => (
-              <div key={experience.id} className="experience-card">
-                <div className="card-top">
-                  <div className="experience-header">
-                    <h3>{experience.title}</h3>
-                    <span className={`status-badge-exp status-${experience.status.toLowerCase()}`}>
-                      {experience.status === 'ACTIVE' && <span className="status-dot-exp"></span>}
-                      {experience.status}
-                    </span>
+          <div className="timeline-wrapper">
+            <div className="timeline-track"></div>
+            {experiences.map((exp, index) => {
+              const isOdd = index % 2 === 0;
+              return (
+                <div
+                  key={exp.id}
+                  className={`timeline-entry ${isOdd ? 'entry-odd' : 'entry-even'} ${exp.status === 'ACTIVE' ? 'entry-active' : ''}`}
+                >
+                  {/* Details */}
+                  <div className="entry-details">
+                    <div className="entry-meta">
+                      <span className="entry-period">{exp.period}</span>
+                      {exp.location && <span className="entry-location">{exp.location}</span>}
+                      <span className={`status-badge-exp status-${exp.status.toLowerCase()}`}>
+                        {exp.status === 'ACTIVE' && <span className="status-dot-exp"></span>}
+                        {exp.status}
+                      </span>
+                    </div>
+                    <h3 className="entry-title">{exp.title}</h3>
+                    <p className="entry-company">{exp.company}</p>
+                    <p className="entry-desc">{exp.description}</p>
+                    <div className="entry-tags">
+                      {exp.technologies.map((tech, i) => (
+                        <span key={i} className="tech-tag">{tech}</span>
+                      ))}
+                    </div>
+                    {exp.metrics && (
+                      <div className="entry-metrics">
+                        {exp.metrics.map((m, i) => (
+                          <div key={i} className="entry-metric">
+                            <span className="metric-value">{m.value}</span>
+                            <span className="metric-label">{m.label}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <span className="company">{experience.company}</span>
-                  <span className="period">{experience.period}</span>
-                </div>
 
-                <p className="description">{experience.description}</p>
-                <div className="technologies">
-                  {experience.technologies.map((tech, index) => (
-                    <span key={index} className="tech-tag">
-                      {tech}
-                    </span>
-                  ))}
+                  {/* Center dot */}
+                  <div className="timeline-node">
+                    <div className="node-dot"></div>
+                  </div>
+
+                  {/* Logo */}
+                  <div className="entry-logo-panel">
+                    {exp.logo ? (
+                      <img src={exp.logo} alt={exp.company} className="entry-logo-img" />
+                    ) : (
+                      <div className="entry-logo-fallback">{exp.logoInitials}</div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}
@@ -322,6 +379,7 @@ function Portfolio() {
       {/* Certifications Section */}
       {activeSection === 'certifications' && (
         <section className="experiences-section">
+          <span className="ghost-title">Certified</span>
           <div className="section-header">
             <h2 className="section-number">02 | CERTIFICATIONS</h2>
             <div className="section-divider"></div>
@@ -357,6 +415,7 @@ function Portfolio() {
       {/* Awards Section */}
       {activeSection === 'awards' && (
         <section className="experiences-section">
+          <span className="ghost-title">Awards</span>
           <div className="section-header">
             <h2 className="section-number">03 | AWARDS</h2>
             <div className="section-divider"></div>
@@ -406,6 +465,7 @@ function Portfolio() {
       {/* Extracurricular/Academics Section */}
       {activeSection === 'extracurricular' && (
         <section className="experiences-section">
+          <span className="ghost-title">Activities</span>
           <div className="section-header">
             <h2 className="section-number">04 | EXTRACURRICULAR</h2>
             <div className="section-divider"></div>
@@ -432,6 +492,7 @@ function Portfolio() {
       {/* Events Section */}
       {activeSection === 'events' && (
         <section className="experiences-section">
+          <span className="ghost-title">Events</span>
           <div className="section-header">
             <h2 className="section-number">05 | EVENTS</h2>
             <div className="section-divider"></div>

@@ -1,0 +1,133 @@
+/* ── Custom cursor ── */
+@media (hover: hover) {
+  body, body * {
+    cursor: none !important;
+  }
+}
+
+#cursor-dot {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease, height 0.15s ease, opacity 0.15s ease;
+  will-change: left, top;
+}
+
+#cursor-dot.cursor-hover {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+/* ── App shell ── */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Page transitions ── */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes page-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
+.page-enter { animation: page-in  0.3s ease both; }
+.page-exit  { animation: page-out 0.21s ease both; }
+
+/* ── Footer ── */
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  background: var(--bg-elevated);
+  padding: 1.8rem 6rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-name {
+  font-family: Didot, 'Didot LT STD', 'Bodoni MT', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.footer-links a {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover { color: var(--gold); }
+
+.footer-year {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+
+/* ── Marquee strip ── */
+.marquee-strip {
+  position: fixed;
+  top: 58px;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--hairline);
+  overflow: hidden;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee-scroll 36s linear infinite;
+}
+
+.marquee-item {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 1.2rem;
+}
+
+.marquee-sep {
+  color: var(--gold);
+  margin-left: 1.2rem;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

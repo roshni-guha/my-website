@@ -2,43 +2,42 @@ import './projects.css';
 
 function Projects() {
   const projects = [
-      {
+    {
       id: 1,
       romanNumeral: 'I.',
-      title: 'RBC AI Research Assistant',
-      category: 'Machine Learning & Financial Technology',
-      description: 'Working as a team of 3 to build an AI-assisted research analyst tool that integrates financial APIs (Yahoo Finance), sentiment feeds (Reddit, X), and financial news aggregators to automate equity research workflows for portfolio managers. Built a functional MVP in Python/Streamlit that retrieved, summarized, and visualized multi-source insights (fundamentals, earnings surprises, sentiment, and technical indicators) within seconds, reducing manual research time by over 50%.',
-      technologies: ['Python', 'Node.js', 'Express.js', 'JavaScript', 'Yahoo Finance API', 'SEC Edgar API', 'NewsAPI', 'yfinance', 'pandas'],
+      title: 'RL Global Equity Allocator',
+      category: 'Reinforcement Learning & Quantitative Finance',
+      description: 'Built a PPO agent that learns to rotate across 6 global ETFs using macro-momentum signals, trained on 2004–2013 data and tested on 2014–2025 with no parameter updates, achieving 13.3% annualized return and Sharpe 0.75. Reduced training time by 60% through O(1) hash map lookups replacing repeated DataFrame scans, vectorized state preprocessing, batched policy updates, and precomputed state representations.',
+      technologies: ['Python', 'PyTorch', 'NumPy', 'Pandas'],
       highlights: [
-        { value: 'Collaborated with a', label: 'Portfolio Manager' },
-        { value: '50%', label: 'Time Reduction' },
-        { value: 'Real-time', label: 'Data Analysis' }
+        { value: '13.3%', label: 'Annualized Return' },
+        { value: '0.75', label: 'Sharpe Ratio' },
+        { value: '60%', label: 'Training Time Cut' }
       ],
       links: [
         { url: 'https://github.com/roshni-guha/trading-bot', label: 'View Code' },
-        // { url: 'https://github.com/roshni-guha/trading-bot', label: 'Technical Specifications' }
       ]
     },
     {
       id: 2,
       romanNumeral: 'II.',
-      title: 'UW Match',
-      category: 'Full-Stack Development',
-      description: 'Building a course search platform with 350+ users, featuring a 4-year planner, grade distribution, demographic breakdowns, RateMyProfessor links, AI-generated discussion summaries, prerequisite tracking, and similar course suggestions. Led ML integration on a 5-person team, developing recommendation models based on user interests, course popularity, and completed courses to improve personalized discovery.',
-      technologies: ['Python', 'AI APIs', 'Svelte', 'FastAPI', 'MongoDB', 'Node.js'],
+      title: 'Bucky Match',
+      category: 'Full-Stack Development & Machine Learning',
+      description: 'Reduced recommendation latency by 70% for 350+ UW students by precomputing LLM-extracted keywords and k-means cluster assignments offline and serving results at inference time. Built a course search platform featuring a 4-year planner, grade distributions, AI-generated discussion summaries, and prerequisite tracking; led ML integration on a 5-person team.',
+      technologies: ['Python', 'Svelte', 'FastAPI', 'MongoDB', 'Node.js'],
       highlights: [
+        { value: '70%', label: 'Latency Reduction' },
         { value: '350+', label: 'Active Users' },
-        { value: 'Full-Stack', label: 'Platform Type' },
-        { value: 'AI-Powered', label: 'Recommendations' }
+        { value: 'k-means', label: 'Clustering' }
       ],
       links: [
         { url: 'https://uwmatch.com', label: 'Live Demo' },
-        // { url: 'https://uwmatch.com', label: 'Product Overview' }
       ]
     },
     {
       id: 3,
       romanNumeral: 'III.',
+
       title: 'Smoking Habit Predictor',
       category: 'Machine Learning Research',
       description: 'Preprocessed CSV health dataset (demographics, oral health, habits) and applied multiple ML algorithms (Decision Tree, KNN, Naïve Bayes, SVM) to classify smoking status. Compared model accuracy with and without feature scaling; achieved best performance with Support Vector Machine (≈76% accuracy) validated via 10-fold cross validation.',
@@ -108,6 +107,7 @@ function Projects() {
 
   return (
     <div className="projects-container">
+      <span className="ghost-title">Projects</span>
       {/* Section Header */}
       <div className="section-header">
         <h2 className="section-number">PROJECTS</h2>

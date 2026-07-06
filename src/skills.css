@@ -1,148 +1,102 @@
-/* Skills Section */
 .skills-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 60px;
-  background: var(--bg-primary);
+  width: 100%;
+  padding: 5rem 6rem 7rem;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Section Header */
+/* ── Header ── */
 .section-header {
-  text-align: left;
-  margin-bottom: 60px;
+  margin-bottom: 4rem;
 }
 
 .section-number {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  color: var(--green);
-  letter-spacing: 0.1em;
-  margin-bottom: 12px;
+  font-size: 0.62rem;
   font-weight: 600;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-}
-
-/* Comment-style prefix */
-.section-number::before {
-  content: '// ';
-  color: var(--text-dim);
+  color: var(--gold);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 0.7rem;
 }
 
 .section-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.8rem;
+  font-family: Didot, 'Didot LT STD', 'Bodoni MT', 'Bodoni 72', 'Book Antiqua', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
-}
-
-/* Terminal command prefix for title */
-.section-title::before {
-  content: '$ ';
-  color: var(--green);
+  font-style: italic;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
 }
 
 .section-divider {
-  width: 50px;
   height: 1px;
-  background: var(--border);
-  margin: 0 0 20px;
+  background: linear-gradient(to right, var(--gold), var(--hairline) 50%, transparent);
+  opacity: 0.6;
+  margin-bottom: 1rem;
+  max-width: 100%;
 }
 
 .section-description {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.875rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  max-width: 700px;
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: var(--text);
+  max-width: 60ch;
+  font-weight: 400;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Skills Grid */
+/* ── Grid ── */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.1rem;
+  align-items: start;
 }
 
+/* ── Category Card ── */
 .skill-category {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg-secondary);
-  padding: 0;
-  transition: all 0.3s ease;
+  background: var(--bg-card);
+  border: 1px solid var(--hairline);
   overflow: hidden;
-  position: relative;
-}
-
-/* Terminal window chrome */
-.skill-category::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background: var(--bg-elevated);
-  border-bottom: 1px solid var(--border);
-}
-
-/* Traffic lights */
-.skill-category::after {
-  content: '';
-  position: absolute;
-  top: 9px;
-  left: 14px;
-  width: 10px;
-  height: 10px;
-  background: #ff5f56;
-  border-radius: 50%;
-  box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27c93f;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .skill-category:hover {
-  border-color: var(--green);
-  box-shadow: 0 0 20px rgba(63, 185, 80, 0.08), 0 4px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(19, 15, 10, 0.06);
   transform: translateY(-2px);
 }
 
 .skill-header {
-  padding: 42px 24px 16px;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  z-index: 1;
+  padding: 0.9rem 1.3rem;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--bg-elevated);
 }
 
 .skill-category-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
-  color: var(--text-primary);
-  font-weight: 700;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: var(--gold);
 }
 
-/* Directory/namespace prefix */
-.skill-category-title::before {
-  content: '~/';
-  color: var(--green);
-  font-weight: 700;
-}
-
+/* ── Skill Items ── */
 .skill-items {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  padding: 8px 0;
 }
 
 .skill-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 24px;
-  border-bottom: 1px solid rgba(48, 54, 61, 0.5);
-  transition: all 0.2s ease;
+  padding: 0.5rem 1.3rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--hairline) 55%, transparent);
+  transition: background 0.15s ease;
 }
 
 .skill-item:last-child {
@@ -150,83 +104,48 @@
 }
 
 .skill-item:hover {
-  background: rgba(63, 185, 80, 0.04);
+  background: var(--bg-elevated);
 }
 
 .skill-name {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 400;
-  transition: color 0.2s ease;
-}
-
-/* File listing style */
-.skill-name::before {
-  content: '- ';
-  color: var(--text-dim);
-}
-
-.skill-item:hover .skill-name {
-  color: var(--text-primary);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .skill-proficiency {
   display: flex;
-  gap: 3px;
+  gap: 4px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .proficiency-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 1px;
-  background: var(--border);
-  transition: all 0.2s ease;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
 }
 
 .proficiency-dot.filled {
-  background: var(--green);
+  background: var(--gold);
+  transform: scale(0);
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  transition-delay: var(--dot-delay, 0ms);
 }
 
-.skill-item:hover .proficiency-dot.filled {
-  box-shadow: 0 0 6px rgba(63, 185, 80, 0.5);
+.skills-loaded .proficiency-dot.filled {
+  transform: scale(1);
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
+/* ── Responsive ── */
+@media (max-width: 768px) {
   .skills-section {
-    padding: 60px 40px;
+    padding: 4rem 2rem 5rem;
   }
 
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-section {
-    padding: 50px 16px;
-  }
-
-  .section-title {
-    font-size: 1.3rem;
-  }
-
-  .section-description {
-    font-size: 0.82rem;
-  }
-
-  .skill-category-title {
-    font-size: 0.78rem;
-  }
-
-  .skill-name {
-    font-size: 0.82rem;
   }
 }

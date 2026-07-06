@@ -1,74 +1,76 @@
+import { useEffect, useRef } from 'react';
 import './skills.css';
 
 function Skills() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      sectionRef.current?.classList.add('skills-loaded');
+    }, 120);
+    return () => clearTimeout(timer);
+  }, []);
   const skillCategories = [
     {
-      title: 'Programming Languages',
+      title: 'Languages',
       skills: [
         { name: 'Python', proficiency: 5 },
-        { name: 'Java', proficiency: 4 },
-        { name: 'R', proficiency: 4 },
-        { name: 'SQL', proficiency: 4 },
-        { name: 'JavaScript', proficiency: 4 },
         { name: 'C++', proficiency: 4 },
+        { name: 'Java', proficiency: 4 },
+        { name: 'JavaScript', proficiency: 4 },
+        { name: 'SQL', proficiency: 4 },
+        { name: 'R', proficiency: 4 },
         { name: 'C', proficiency: 3 },
         { name: 'Bash', proficiency: 3 },
-        { name: 'HTML', proficiency: 4 },
-        { name: 'CSS', proficiency: 3 },
+        { name: 'Assembly', proficiency: 2 },
       ]
     },
     {
-      title: 'Machine Learning & AI',
+      title: 'ML & Data',
       skills: [
         { name: 'PyTorch', proficiency: 4 },
-        { name: 'TensorFlow', proficiency: 4 },
         { name: 'scikit-learn', proficiency: 5 },
         { name: 'Pandas', proficiency: 5 },
         { name: 'NumPy', proficiency: 5 },
         { name: 'Polars', proficiency: 3 },
         { name: 'Pydantic', proficiency: 4 },
         { name: 'CARLA', proficiency: 3 },
-        { name: 'Statistical Learning', proficiency: 4 },
-        { name: 'Reinforcement Learning', proficiency: 3 },
+        { name: 'Reinforcement Learning', proficiency: 4 },
         { name: 'POMDP', proficiency: 3 },
       ]
     },
     {
-      title: 'Frameworks & Tools',
+      title: 'Infra & Tools',
       skills: [
-        { name: 'Docker', proficiency: 4 },
-        { name: 'Git', proficiency: 5 },
-        { name: 'GitHub Actions', proficiency: 3 },
-        { name: 'React', proficiency: 4 },
-        { name: 'FastAPI', proficiency: 4 },
-        { name: 'Node.js', proficiency: 3 },
-        { name: 'Linux', proficiency: 4 },
-        { name: 'Apache Spark', proficiency: 3 },
-      ]
-    },
-    {
-      title: 'Cloud & Data',
-      skills: [
-        { name: 'AWS', proficiency: 3 },
         { name: 'GCP', proficiency: 4 },
-        { name: 'BigQuery', proficiency: 4 },
-        { name: 'HDFS', proficiency: 3 },
-        { name: 'Power BI', proficiency: 3 },
+        { name: 'Docker', proficiency: 4 },
+        { name: 'GitHub Actions', proficiency: 3 },
+        { name: 'AWS', proficiency: 3 },
+        { name: 'FastAPI', proficiency: 4 },
+        { name: 'React', proficiency: 4 },
+        { name: 'Linux', proficiency: 4 },
+        { name: 'Git', proficiency: 5 },
+        { name: 'Redis', proficiency: 3 },
+        { name: 'Playwright', proficiency: 3 },
       ]
     },
     {
       title: 'Quantitative Finance',
       skills: [
-        { name: 'Interactive Brokers', proficiency: 4 },
+        { name: 'IB Gateway', proficiency: 4 },
         { name: 'Yahoo Finance API', proficiency: 5 },
         { name: 'Statistical Modeling', proficiency: 4 },
         { name: 'Time Series Analysis', proficiency: 4 },
+        { name: 'Portfolio Optimization', proficiency: 3 },
       ]
     }
   ];
 
+  let dotSeq = 0;
+
   return (
-    <section className="skills-section" id="skills">
+    <section className="skills-section" id="skills" ref={sectionRef}>
+      <span className="ghost-title">Skills</span>
       <div className="section-header">
         <div className="section-number">03</div>
         <h2 className="section-title">Technical Expertise</h2>
@@ -86,7 +88,9 @@ function Skills() {
               <h3 className="skill-category-title">{category.title}</h3>
             </div>
             <div className="skill-items">
-              {category.skills.map((skill, skillIndex) => (
+              {category.skills.map((skill, skillIndex) => {
+                const delay = (dotSeq++) * 18;
+                return (
                 <div key={skillIndex} className="skill-item">
                   <span className="skill-name">{skill.name}</span>
                   <div className="skill-proficiency">
@@ -94,11 +98,13 @@ function Skills() {
                       <span
                         key={level}
                         className={`proficiency-dot ${level <= skill.proficiency ? 'filled' : ''}`}
+                        style={level <= skill.proficiency ? { '--dot-delay': `${delay}ms` } : {}}
                       ></span>
                     ))}
                   </div>
                 </div>
-              ))}
+              );
+              })}
             </div>
           </div>
         ))}

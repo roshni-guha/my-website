@@ -2,117 +2,138 @@ import Portfolio from './portfolio.jsx';
 import Hero from './Hero.jsx';
 import Projects from './Projects.jsx';
 import Skills from './Skills.jsx';
-import Terminal from './Terminal.jsx';
-import { useState } from 'react';
-
-const monoFont = "'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'Monaco', 'Consolas', monospace";
-
-const navBg = 'rgba(13, 17, 23, 0.97)';
-const navBorder = '#30363d';
-const activeColor = '#3fb950';
-const inactiveColor = '#484f58';
-const hoverColor = '#8b949e';
+import { useState, useEffect } from 'react';
+import './home.css';
 
 function Home() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [activePage,     setActivePage]     = useState('home');
+  const [displayPage,    setDisplayPage]    = useState('home');
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const navItems = [
+    { key: 'home',      label: 'Home' },
+    { key: 'portfolio', label: 'Experience' },
+    { key: 'projects',  label: 'Projects' },
+    { key: 'skills',    label: 'Skills' },
+  ];
+
+  const marqueeItems = [
+    'AI Engineering', 'Quantitative Finance', 'Machine Learning',
+    'UW–Madison', 'CS & Mathematics', 'Voyager AI',
+    'ML Research', 'CapitalFund', 'Summer 2026', 'Systems Analysis',
+  ];
+
+  const navigate = (page) => {
+    if (page === activePage || isTransitioning) return;
+    setActivePage(page);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setDisplayPage(page);
+      setIsTransitioning(false);
+    }, 210);
+  };
+
+  useEffect(() => {
+    const dot = document.getElementById('cursor-dot');
+    if (!dot) return;
+    const move = (e) => {
+      dot.style.left = e.clientX + 'px';
+      dot.style.top  = e.clientY + 'px';
+    };
+    const over = (e) => {
+      const interactive = e.target.closest('a, button, .gallery-img, .timeline-entry, .skill-category, .project');
+      dot.classList.toggle('cursor-hover', !!interactive);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseover', over);
+    return () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseover', over);
+    };
+  }, []);
 
   return (
-    <div>
+    <div className="app-wrapper">
+      <div id="cursor-dot"></div>
+
       <header style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: navBg,
-        backdropFilter: 'blur(12px)',
-        borderBottom: `1px solid ${navBorder}`,
-        zIndex: 1000,
-        transition: 'all 0.3s ease',
-        padding: '16px 60px',
-        boxShadow: '0 1px 8px rgba(0, 0, 0, 0.5)'
+        position: 'fixed', top: 0, left: 0, right: 0,
+        backgroundColor: 'rgba(247, 243, 236, 0.97)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '1px solid #DDD7CC',
+        zIndex: 1000, padding: '0 60px', height: '58px',
+        display: 'flex', alignItems: 'center',
       }}>
-        <nav style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}>
-          {/* Logo - terminal prompt style */}
+        <nav style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <button
-            onClick={() => setCurrentPage('home')}
+            onClick={() => navigate('home')}
             style={{
-              fontFamily: monoFont,
-              fontSize: '0.95em',
-              fontWeight: '600',
-              color: activeColor,
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.25s ease',
-              letterSpacing: '0.02em',
+              fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+              fontSize: '0.72rem', fontWeight: '500',
+              letterSpacing: '0.22em', textTransform: 'uppercase',
+              color: activePage === 'home' ? '#B5913C' : '#130F0A',
+              background: 'transparent', border: 'none',
             }}
-            onMouseEnter={(e) => e.target.style.color = hoverColor}
-            onMouseLeave={(e) => e.target.style.color = activeColor}
           >
-            rg@uw-madison:~$
+            Roshni Guha
           </button>
 
-          <div style={{
-            display: 'flex',
-            gap: '8px',
-            alignItems: 'center'
-          }}>
-            {[
-              { key: 'home', label: 'home' },
-              { key: 'portfolio', label: 'experience' },
-              { key: 'projects', label: 'projects' },
-              { key: 'skills', label: 'skills' },
-              { key: 'terminal', label: 'terminal' },
-            ].map(({ key, label }) => (
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            {navItems.map(({ key, label }) => (
               <button
                 key={key}
-                onClick={() => setCurrentPage(key)}
+                onClick={() => navigate(key)}
                 style={{
-                  background: currentPage === key ? 'rgba(63, 185, 80, 0.08)' : 'transparent',
-                  border: currentPage === key ? `1px solid ${activeColor}` : '1px solid transparent',
-                  color: currentPage === key ? activeColor : inactiveColor,
-                  fontFamily: monoFont,
-                  fontSize: '0.82em',
-                  fontWeight: currentPage === key ? '600' : '400',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  padding: '6px 14px',
-                  borderRadius: '4px',
-                  letterSpacing: '0.02em',
+                  background: 'transparent', border: 'none',
+                  borderBottom: activePage === key ? '1px solid #B5913C' : '1px solid transparent',
+                  color: activePage === key ? '#B5913C' : '#9A9182',
+                  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                  fontSize: '0.68rem', fontWeight: '500',
+                  letterSpacing: '0.2em', textTransform: 'uppercase',
+                  padding: '8px 20px',
+                  transition: 'color 0.2s ease, border-color 0.2s ease',
                 }}
-                onMouseEnter={(e) => {
-                  if (currentPage !== key) {
-                    e.currentTarget.style.color = hoverColor;
-                    e.currentTarget.style.borderColor = navBorder;
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (currentPage !== key) {
-                    e.currentTarget.style.color = inactiveColor;
-                    e.currentTarget.style.borderColor = 'transparent';
-                  }
-                }}
+                onMouseEnter={(e) => { if (activePage !== key) e.currentTarget.style.color = '#B5913C'; }}
+                onMouseLeave={(e) => { if (activePage !== key) e.currentTarget.style.color = '#9A9182'; }}
               >
-                ./{label}
+                {label}
               </button>
             ))}
           </div>
         </nav>
       </header>
 
-      <main style={{ marginTop: '65px' }}>
-        {currentPage === 'home' && <Hero onOpenTerminal={() => setCurrentPage('terminal')} />}
-        {currentPage === 'portfolio' && <Portfolio />}
-        {currentPage === 'projects' && <Projects />}
-        {currentPage === 'skills' && <Skills />}
-        {currentPage === 'terminal' && <Terminal />}
+      <div className="marquee-strip">
+        <div className="marquee-track">
+          {[...marqueeItems, ...marqueeItems].map((item, i) => (
+            <span key={i} className="marquee-item">
+              {item}<span className="marquee-sep">·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <main
+        className={`page-wrap ${isTransitioning ? 'page-exit' : 'page-enter'}`}
+        style={{ marginTop: '86px', flex: 1 }}
+      >
+        {displayPage === 'home'      && <Hero />}
+        {displayPage === 'portfolio' && <Portfolio />}
+        {displayPage === 'projects'  && <Projects />}
+        {displayPage === 'skills'    && <Skills />}
       </main>
+
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <span className="footer-name">Roshni Guha</span>
+          <div className="footer-links">
+            <a href="https://github.com/roshni-guha" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/roshni-guha" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:rguha@wisc.edu">Email</a>
+          </div>
+          <span className="footer-year">© 2026</span>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -1,398 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-
 :root {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'Monaco', 'Consolas', monospace;
-  line-height: 1.7;
-  font-weight: 400;
-
-  /* Modern Terminal Dark Theme (default) */
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --bg-elevated: #1c2128;
-  --text-primary: #e6edf3;
-  --text-secondary: #8b949e;
-  --text-dim: #484f58;
-  --border: #30363d;
-
-  /* Terminal Accent Colors */
-  --green: #3fb950;
-  --green-bright: #56d364;
-  --green-dim: #26a641;
-  --cyan: #58a6ff;
-  --orange: #e3b341;
-  --red: #f85149;
-  --purple: #a371f7;
-
-  /* Compatibility aliases */
-  --gold: #3fb950;
-  --gold-light: #56d364;
-  --accent-navy: #58a6ff;
-  --accent-navy-dark: #388bfd;
-  --accent-navy-hover: #79c0ff;
-  --accent-burgundy: #f85149;
-  --accent-gold-dark: #2ea043;
-
-  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.5);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.6);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.7);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.8);
-  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.9);
-
-  color-scheme: dark;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --bg:          #F7F3EC;
+  --bg-card:     #FFFFFF;
+  --bg-elevated: #F2EDE4;
+  --text:        #130F0A;
+  --muted:       #5C5248;
+  --gold:        #B5913C;
+  --hairline:    #DDD7CC;
 }
 
-/* Dark Mode - Classic Green Terminal */
-body.dark-mode {
-  --bg-primary: #001100;
-  --bg-secondary: #001800;
-  --bg-elevated: #002200;
-  --text-primary: #00ff88;
-  --text-secondary: #00bb66;
-  --text-dim: #006633;
-  --border: #003d1a;
-
-  --green: #00ff88;
-  --green-bright: #33ffaa;
-  --green-dim: #00cc66;
-  --cyan: #00ffcc;
-  --orange: #ffcc00;
-  --red: #ff4466;
-  --purple: #dd88ff;
-
-  --gold: #00ff88;
-  --gold-light: #33ffaa;
-  --accent-navy: #00ffcc;
-  --accent-navy-dark: #00ccaa;
-  --accent-navy-hover: #66ffdd;
-  --accent-burgundy: #ff4466;
-  --accent-gold-dark: #00cc66;
-
-  --shadow-xs: 0 1px 3px rgba(0, 255, 100, 0.05);
-  --shadow-sm: 0 2px 8px rgba(0, 255, 100, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 255, 100, 0.1);
-  --shadow-lg: 0 8px 32px rgba(0, 255, 100, 0.12);
-  --shadow-xl: 0 12px 48px rgba(0, 255, 100, 0.15);
-
-  color-scheme: dark;
-}
-
-/* Dark Mode Card Overrides */
-body.dark-mode .experience-card,
-body.dark-mode .skill-category,
-body.dark-mode .project {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.03);
-}
-
-body.dark-mode .experience-card:hover,
-body.dark-mode .skill-category:hover,
-body.dark-mode .project:hover {
-  background: var(--bg-secondary);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.12);
-  border-color: var(--green);
-}
-
-body.dark-mode .credential-item {
-  border-left-width: 3px;
-  border-left-color: var(--green);
-}
-
-body.dark-mode .skill-header {
-  border-bottom: 1px solid var(--border);
-}
-
-body.dark-mode .stats-panel {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.05);
-}
-
-body.dark-mode .panel-header {
-  color: var(--green);
-  border-bottom: 1px solid var(--border);
-}
-
-body.dark-mode .stat-value,
-body.dark-mode .metric-value,
-body.dark-mode .highlight-value {
-  color: var(--text-primary);
-}
-
-body.dark-mode .btn-primary {
-  background: transparent;
-  color: var(--green);
-  border: 1px solid var(--green);
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.15);
-}
-
-body.dark-mode .btn-primary:hover {
-  background: rgba(0, 255, 136, 0.08);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.25);
-}
-
-body.dark-mode .btn-secondary {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-}
-
-body.dark-mode .btn-secondary:hover {
-  border-color: var(--green);
-  color: var(--green);
-}
-
-body.dark-mode .project-header {
-  background: var(--bg-elevated);
-  border-bottom: 1px solid var(--border);
-}
-
-body.dark-mode .project-highlights {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-}
-
-body.dark-mode .project-footer {
-  background: var(--bg-elevated);
-  border-top: 1px solid var(--border);
-}
-
-body.dark-mode .credential-title {
-  color: var(--text-primary);
-}
-
-body.dark-mode .credential-institution {
-  color: var(--text-secondary);
-}
-
-body.dark-mode .credential-date {
-  color: var(--cyan);
-}
-
-body.dark-mode .tech-tag,
-body.dark-mode .tech-item {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-}
-
-body.dark-mode .tech-tag:hover,
-body.dark-mode .tech-item:hover {
-  border-color: var(--green);
-  color: var(--green);
-  background: rgba(0, 255, 136, 0.05);
-}
-
-body.dark-mode .terminal-header {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--green);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.08);
-}
-
-body.dark-mode .terminal-header:hover {
-  box-shadow: 0 0 30px rgba(0, 255, 136, 0.15);
-}
-
-body.dark-mode .terminal-text {
-  color: var(--text-primary);
-}
-
-body.dark-mode header {
-  background: rgba(0, 17, 0, 0.97) !important;
-  border-bottom-color: var(--border) !important;
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.05) !important;
-}
-
-body.dark-mode .section-number {
-  color: var(--text-primary);
-}
-
-* {
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   min-height: 100vh;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'Monaco', 'Consolas', monospace;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  position: relative;
-}
-
-/* Scanline Effect */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.06) 2px,
-    rgba(0, 0, 0, 0.06) 4px
-  );
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.5;
-}
-
-body.dark-mode::before {
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.2) 2px,
-    rgba(0, 0, 0, 0.2) 4px
-  );
-  opacity: 0.7;
-}
-
-a {
-  font-weight: 500;
-  color: var(--cyan);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--green);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  color: var(--text-primary);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-}
-
-h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-  font-weight: 800;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-p,
-.description,
-.project-description,
-.experience-description,
-.about-text,
-.role-description,
-.achievement,
-.highlight-text {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-}
-
-button {
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  padding: 0.5em 1em;
-  font-size: 0.875em;
-  font-weight: 500;
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  letter-spacing: 0.02em;
-  background-color: transparent;
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: border-color 0.25s, background-color 0.3s ease, color 0.3s ease;
-}
-
-button:hover {
-  border-color: var(--green);
-  color: var(--green);
-}
-
-button:focus,
-button:focus-visible {
-  outline: 2px solid var(--green);
-  outline-offset: 2px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
-  position: relative;
-  z-index: 2;
 }
 
-/* Section Dividers */
-.section-divider-ornamental {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: 60px auto;
-  max-width: 600px;
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.section-divider-ornamental::before,
-.section-divider-ornamental::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
+a:hover {
+  opacity: 0.65;
 }
 
-.section-divider-ornamental .ornament {
-  color: var(--green);
-  font-size: 0.85em;
-  font-family: 'JetBrains Mono', monospace;
-  opacity: 0.7;
+h1, h2, h3, h4, h5, h6 {
+  font-family: Didot, 'Didot LT STD', 'Bodoni MT', 'Bodoni 72', 'Book Antiqua', Georgia, serif;
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-/* Card Styles */
-.card-rich {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
-  border-radius: 4px;
+button {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  background: transparent;
+  border: none;
 }
 
-.card-rich:hover {
-  box-shadow: var(--shadow-lg);
-  border-color: var(--green);
-  transform: translateY(-2px);
+button:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 3px;
 }
 
-/* Accent Lines */
-.gold-line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-  margin: 30px 0;
-}
-
-.gold-line-vertical {
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--border), transparent);
+.ghost-title {
+  position: absolute;
+  top: -0.15em;
+  left: -0.04em;
+  font-family: Didot, 'Didot LT STD', 'Bodoni MT', 'Bodoni 72', Georgia, serif;
+  font-size: clamp(7rem, 16vw, 15rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text);
+  opacity: 0.045;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  white-space: nowrap;
+  z-index: 0;
 }
