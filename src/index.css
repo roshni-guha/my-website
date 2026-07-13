@@ -6,6 +6,18 @@
   --muted:       #5C5248;
   --gold:        #B5913C;
   --hairline:    #DDD7CC;
+  --bg-nav:      rgba(247, 243, 236, 0.97);
+}
+
+:root[data-theme="dark"] {
+  --bg:          #100E0B;
+  --bg-card:     #1C1914;
+  --bg-elevated: #232019;
+  --text:        #EDE8DF;
+  --muted:       #8C8278;
+  --gold:        #C8A24A;
+  --hairline:    #2C2822;
+  --bg-nav:      rgba(16, 14, 11, 0.97);
 }
 
 *, *::before, *::after {
@@ -17,6 +29,7 @@
 body {
   background: var(--bg);
   color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
