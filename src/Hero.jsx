@@ -63,6 +63,18 @@ function Hero() {
             </p>
           </div>
 
+          <div className="logo-strip">
+            <p className="logo-strip-label">Experience at</p>
+            <div className="logo-strip-row">
+              <img src="/logos/VoyagerAI-logo.png"                          alt="Voyager AI"        className="strip-logo" />
+              <img src="/logos/ml_research.jpeg"                            alt="UW HFML Lab"       className="strip-logo" />
+              <img src="/logos/wirevenue_logo.jpeg"                         alt="Wisconsin DOR"     className="strip-logo" />
+              <img src="/logos/hawk_center_for_investment_analysis_logo.jpeg" alt="Hawk Center"     className="strip-logo" />
+              <img src="/logos/RBC.png"                                     alt="RBC"               className="strip-logo" />
+              <img src="/logos/uw_CS.jpeg"                                  alt="UW–Madison CS"     className="strip-logo" />
+            </div>
+          </div>
+
           <div className="social-links">
             <a href="https://github.com/roshniguha" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

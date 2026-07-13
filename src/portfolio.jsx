@@ -108,8 +108,8 @@ function Portfolio() {
       company: 'Al Khayat Contracting LLC, Dubai UAE',
       period: 'July 2023',
       status: 'COMPLETED',
-      logo: null,
-      logoInitials: 'AK',
+      logo: '/logos/dubai.jpeg',
+      logoType: 'photo',
       description: 'Assisted senior analysts in compiling and interpreting payment, working capital, and tender data, improving reporting workflows and reducing turnaround times by ~20%, supported by SQL knowledge gained through prior training.',
       technologies: ['Data Analysis', 'Excel', 'SQL', 'Data Visualization'],
       metrics: [
@@ -125,23 +125,27 @@ function Portfolio() {
     {
       id: 1,
       title: 'IIT Kanpur Summer Training in Machine Learning',
-      // issuer: 'IIT Kanpur',
+      issuer: 'IIT Kanpur',
       period: 'August 2025',
+      logo: '/logos/IIT_kanpur.jpg',
       description: 'Mastered designing, implementing, and evaluating supervised and unsupervised ML models using Python. Engineered features, optimized algorithms (e.g., regression, decision trees, SVM, k-NN, K-means), and performed data preprocessing and analytics with Pandas and NumPy. Applied model interpretability tools (SHAP, LIME) and delivered end-to-end ML solutions.',
       file: '/IITK.pdf'
     },
     {
       id: 2,
       title: 'Bloomberg Market Concepts (BMC)',
-      // issuer: 'Amazon Web Services',
+      issuer: 'Bloomberg',
       period: 'May 2025',
-      description: 'Basic understanding of financial markets, instruments, and concepts.',
+      logo: '/logos/bloomberg.jpg',
+      description: 'Comprehensive understanding of financial markets, instruments, and concepts — covering economic indicators, currencies, fixed income, and equity investing.',
       link: 'https://portal.bloombergforeducation.com/certificates/8zy3HBW3eJk53poBuGgPXS6m'
     },
     {
       id: 3,
-      title: 'Goldman Sachs Controllers Job Simulation on Forage',
+      title: 'Goldman Sachs Controllers Job Simulation',
+      issuer: 'Goldman Sachs · Forage',
       period: 'March 2025',
+      logo: '/logos/Goldman_sachs.jpeg',
       description: 'Completed a job simulation involving financial analysis and reporting. Developed analytical skills through calculating Net Asset Valuation (NAV) and unitizing financial data. Utilized Excel for detailed financial analysis, data validation, and trend analysis, leading to accurate financial reporting and reconciliation.',
       link: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/MBA4MnZTNFEoJZGnk/vjFao7z4tXKe2EwvK_MBA4MnZTNFEoJZGnk_WJSweXA52tvkh4dGD_1743129973453_completion_certificate.pdf'
     },
@@ -155,6 +159,8 @@ function Portfolio() {
       event: 'University of Wisconsin-Madison',
       period: 'Fall 2024, Spring 2025, Fall 2025',
       description: 'Recognized for academic excellence with GPA above 3.6.',
+      logo: '/logos/uw_madison_logo.jpeg',
+      logoGroup: 'uw',
     },
     {
       id: 2,
@@ -162,13 +168,17 @@ function Portfolio() {
       event: 'International Olympiad Organization',
       period: 'January 2023',
       description: 'Ranked in UAE Top 10 for Chemistry (#4), Physics (#5), Mathematics (#4), English (#7), and Cyber (#4).',
+      logo: '/logos/international-olympiad-foundation-logo.png',
+      logoGroup: 'olympiad',
     },
     {
       id: 3,
       title: 'Grand Awardee – 10th India Middle East Education Awards 2024',
-      event: 'Yallaschools UAE',
+      event: 'Yallaschools UAE · CBSE',
       period: 'June 2024',
       description: 'Recognized for academic excellence among top CBSE/ISC Grade 12 achievers across over 60 Indian schools in the Middle East, nominated by the school and selected from over 10,000 students across six countries.',
+      logo: '/logos/cbse.jpg',
+      logoGroup: 'cbse',
     },
     {
       id: 4,
@@ -177,7 +187,9 @@ function Portfolio() {
       period: 'October 2023',
       description: 'Developed a sustainable cat food dispenser model utilizing recycled Samsung TV boxes to promote environmental responsibility and minimize cardboard waste.',
       file: '/PDS Manual.pdf',
-      link: 'https://drive.google.com/file/d/1zQwZmydhKXgpoeiV6dou6mGmdByB_aMN/view?usp=share_link'
+      link: 'https://drive.google.com/file/d/1zQwZmydhKXgpoeiV6dou6mGmdByB_aMN/view?usp=share_link',
+      logo: '/logos/samsung.png',
+      logoGroup: 'samsung',
     },
     {
       id: 5,
@@ -185,38 +197,62 @@ function Portfolio() {
       event: 'Central Board of Secondary Education, India',
       period: 'October 2022',
       description: 'Received felicitation for achieving a full 100% score in Mathematics and Computer Applications during tenth board examinations.',
+      logo: '/logos/cbse.jpg',
+      logoGroup: 'cbse',
     },
     {
       id: 6,
-      title: 'ASSET Talent Scholar - Silver Medalist in UAE (Top 50)',
+      title: 'ASSET Talent Scholar — Silver Medalist in UAE (Top 50)',
       event: 'Assessment of Scholastic Skills through Educational Testing',
       period: 'November 2021',
       description: 'Achieved a high score ranking among the top 50 students in the United Arab Emirates who took the ASSET exam.',
+      logo: '/logos/asset.jpeg',
+      logoGroup: 'asset',
     },
     {
       id: 7,
-      title: 'Runners up for U14 Girls Swimming National Campionship',
+      title: 'Runners Up — U14 Girls Swimming National Championship',
       event: 'CBSE National Swimming Championship',
       period: 'November 2018',
-      description: 'Competed as a part of the Indian High School\'s girls U14 swimming team winning a two silver medals in UAE CBSE clusters and qualifying for CBSE Nationals held in Ranchi, India where we won first runners up. Qualified for 400m Freestyle relay and 400m Medley relay with me swimming 100m butterfly for the latter.',
-    }
+      description: 'Competed as a part of the Indian High School\'s girls U14 swimming team winning silver medals in UAE CBSE clusters and qualifying for CBSE Nationals held in Ranchi, India. Qualified for 400m Freestyle relay and 400m Medley relay.',
+      logo: '/logos/cbse.jpg',
+      logoGroup: 'cbse',
+    },
   ];
+
+  // Group awards by logoGroup, preserving first-occurrence order
+  const awardGroups = awards.reduce((groups, award) => {
+    const existing = groups.find(g => g.key === award.logoGroup);
+    if (existing) {
+      existing.items.push(award);
+    } else {
+      groups.push({ key: award.logoGroup, logo: award.logo, items: [award] });
+    }
+    return groups;
+  }, []);
 
   // Extracurricular/Academics data
   const extracurricular = [
     {
       id: 1,
-      title: 'Vice President for Software Development - Cardinal Trading Group',
+      title: 'Vice President for Software Development',
+      org: 'Traders at Wisconsin',
+      orgLink: 'https://www.tradersatwisconsin.com',
       category: 'Leadership',
       period: 'Jan 2026 - May 2026',
       description: 'Lead organization of 200+ members, organizing tech talks, workshops, and hackathons.',
+      logo: '/logos/traders_at_wisconsin.jpg',
+      logoType: 'logo',
     },
     {
       id: 2,
       title: 'Children\'s Volunteer',
+      org: 'Mumbai, India',
       category: 'Volunteering',
       period: 'July 2016 - August 2023',
-      description: 'Volunteered at a kindergarten every summer break. Lead a Swachh Bharat campaign to raise awareness about cleanliness and a tree-planting campaign simultaneously. Additionally, provided computer and technology courses to children.',
+      description: 'Volunteered at a kindergarten every summer break. Led a Swachh Bharat campaign to raise awareness about cleanliness and a tree-planting campaign simultaneously. Additionally, provided computer and technology courses to children.',
+      logo: '/logos/mumbai.jpg',
+      logoType: 'photo',
     },
   ];
 
@@ -226,22 +262,28 @@ function Portfolio() {
       id: 1,
       title: 'Future Innovators Series',
       organization: 'Blackstone',
-      period: 'May 2026 - Present',
+      period: 'May 2026 – Present',
       description: 'Participating in a mentorship pod led by Blackstone industry professionals working in technology and innovation, gaining insights into career pathways and emerging trends at the intersection of finance and technology.',
+      logo: '/logos/images.png',
+      logoGroup: 'blackstone',
     },
     {
       id: 2,
-      title: 'Emerging Leaders Series - Dallas Engineering',
+      title: 'Emerging Leaders Series — Dallas Engineering',
       organization: 'Goldman Sachs',
       period: 'April 2026',
       description: 'In-person event in Dallas for selected engineering students to network with Goldman Sachs leaders and explore career opportunities in technology and finance.',
+      logo: '/logos/goldman_sachs_event_logo.png',
+      logoGroup: 'gs',
     },
     {
       id: 3,
       title: 'Virtual Insight Series',
       organization: 'Goldman Sachs',
-      period: 'May - June 2025',
-      description: 'Completed four-week program exploring firm divisions and career pathways',
+      period: 'May – June 2025',
+      description: 'Completed four-week program exploring firm divisions and career pathways.',
+      logo: '/logos/goldman_sachs_event_logo.png',
+      logoGroup: 'gs',
     },
     {
       id: 4,
@@ -249,20 +291,26 @@ function Portfolio() {
       organization: 'JP Morgan Chase',
       period: 'April 2025',
       description: 'Participated in a virtual event designed for second-year students to explore career opportunities and network with professionals at JP Morgan Chase.',
+      logo: '/logos/jp_morgan.png',
+      logoGroup: 'jpm',
     },
     {
       id: 5,
-      title: 'Women in Wealth: LIFT - College Leadership Summit',
+      title: 'Women in Wealth: LIFT — College Leadership Summit',
       organization: 'Morgan Stanley',
       period: 'April 2025',
       description: 'Attended a virtual leadership summit focused on empowering women in finance through workshops, networking, and skill-building sessions.',
+      logo: '/logos/morgan_stanley.jpeg',
+      logoGroup: 'ms',
     },
     {
       id: 6,
-      title: 'Women\'s Possibilities Summit',
+      title: "Women's Possibilities Summit",
       organization: 'Goldman Sachs',
-      period: 'January - December 2025',
-      description: 'Chosen among 14000+ to participate in a year-long program focused on leadership development, networking, and career growth for women',
+      period: 'January – December 2025',
+      description: 'Chosen among 14,000+ to participate in a year-long program focused on leadership development, networking, and career growth for women.',
+      logo: '/logos/goldman_sachs_event_logo.png',
+      logoGroup: 'gs',
     },
     {
       id: 7,
@@ -270,8 +318,21 @@ function Portfolio() {
       organization: 'JP Morgan Chase',
       period: 'April 2025',
       description: 'Participated in a virtual event designed for first-year students to explore career opportunities and network with professionals at JP Morgan Chase.',
+      logo: '/logos/jp_morgan.png',
+      logoGroup: 'jpm',
     },
   ];
+
+  // Group events by logoGroup, preserving first-occurrence order
+  const eventGroups = events.reduce((groups, event) => {
+    const existing = groups.find(g => g.key === event.logoGroup);
+    if (existing) {
+      existing.items.push(event);
+    } else {
+      groups.push({ key: event.logoGroup, logo: event.logo, organization: event.organization, items: [event] });
+    }
+    return groups;
+  }, []);
 
   const sections = [
     { id: 'experiences', label: 'Experiences' },
@@ -282,7 +343,7 @@ function Portfolio() {
   ];
 
   useEffect(() => {
-    if (activeSection !== 'experiences') return;
+    if (activeSection !== 'experiences' && activeSection !== 'certifications' && activeSection !== 'awards' && activeSection !== 'extracurricular' && activeSection !== 'events') return;
     const observer = new IntersectionObserver(
       (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
       { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
@@ -364,7 +425,11 @@ function Portfolio() {
                   {/* Logo */}
                   <div className="entry-logo-panel">
                     {exp.logo ? (
-                      <img src={exp.logo} alt={exp.company} className="entry-logo-img" />
+                      <img
+                        src={exp.logo}
+                        alt={exp.company}
+                        className={exp.logoType === 'photo' ? 'entry-logo-circle' : 'entry-logo-img'}
+                      />
                     ) : (
                       <div className="entry-logo-fallback">{exp.logoInitials}</div>
                     )}
@@ -384,30 +449,53 @@ function Portfolio() {
             <h2 className="section-number">02 | CERTIFICATIONS</h2>
             <div className="section-divider"></div>
           </div>
-          <div className="experiences-scroll">
-            {certifications.map((cert) => (
-              <div key={cert.id} className="experience-card">
-                <div className="card-top">
-                  <div className="experience-header">
-                    <h3>{cert.title}</h3>
+          <div className="timeline-wrapper">
+            <div className="timeline-track"></div>
+            {certifications.map((cert, index) => {
+              const isOdd = index % 2 === 0;
+              return (
+                <div
+                  key={cert.id}
+                  className={`timeline-entry ${isOdd ? 'entry-odd' : 'entry-even'}`}
+                >
+                  {/* Details */}
+                  <div className="entry-details">
+                    <div className="entry-meta">
+                      <span className="entry-period">{cert.period}</span>
+                    </div>
+                    <h3 className="entry-title">{cert.title}</h3>
+                    <p className="entry-company">{cert.issuer}</p>
+                    <p className="entry-desc">{cert.description}</p>
+                    {(cert.file || cert.link) && (
+                      <div style={{ marginTop: '0.8rem' }}>
+                        <a
+                          href={cert.file || cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cert-link"
+                        >
+                          View Certificate ↗
+                        </a>
+                      </div>
+                    )}
                   </div>
-                  <span className="period">{cert.period}</span>
+
+                  {/* Center dot */}
+                  <div className="timeline-node">
+                    <div className="node-dot"></div>
+                  </div>
+
+                  {/* Logo */}
+                  <div className="entry-logo-panel">
+                    {cert.logo ? (
+                      <img src={cert.logo} alt={cert.issuer} className="entry-logo-img" />
+                    ) : (
+                      <div className="entry-logo-fallback">{cert.issuer?.charAt(0)}</div>
+                    )}
+                  </div>
                 </div>
-                <p className="description">{cert.description}</p>
-                {(cert.file || cert.link) && (
-                  <div className="cert-link-wrapper">
-                    <a
-                      href={cert.file || cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cert-link"
-                    >
-                      {cert.file ? 'View Certificate' : 'View Certificate'}
-                    </a>
-                  </div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}
@@ -420,44 +508,58 @@ function Portfolio() {
             <h2 className="section-number">03 | AWARDS</h2>
             <div className="section-divider"></div>
           </div>
-          <div className="experiences-scroll">
-            {awards.map((award) => (
-              <div key={award.id} className="experience-card">
-                <div className="card-top">
-                  <div className="experience-header">
-                    <h3>{award.title}</h3>
+          <div className="timeline-wrapper">
+            <div className="timeline-track"></div>
+            {awardGroups.map((group, index) => {
+              const isOdd = index % 2 === 0;
+              return (
+                <div
+                  key={group.key}
+                  className={`timeline-entry ${isOdd ? 'entry-odd' : 'entry-even'}`}
+                >
+                  {/* Details — stacked if multiple awards share the logo */}
+                  <div className="entry-details">
+                    {group.items.map((award, i) => (
+                      <div
+                        key={award.id}
+                        className={i > 0 ? 'award-stacked-item' : ''}
+                      >
+                        <div className="entry-meta">
+                          <span className="entry-period">{award.period}</span>
+                        </div>
+                        <h3 className="entry-title">{award.title}</h3>
+                        <p className="entry-company">{award.event}</p>
+                        <p className="entry-desc">{award.description}</p>
+                        {(award.file || award.link) && (
+                          <div style={{ display: 'flex', gap: '0.6rem', marginTop: '0.6rem', flexWrap: 'wrap' }}>
+                            {award.file && (
+                              <a href={award.file} target="_blank" rel="noopener noreferrer" className="cert-link">
+                                View Document ↗
+                              </a>
+                            )}
+                            {award.link && (
+                              <a href={award.link} target="_blank" rel="noopener noreferrer" className="cert-link">
+                                View Link ↗
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                  <span className="company">{award.event}</span>
-                  <span className="period">{award.period}</span>
+
+                  {/* Center dot */}
+                  <div className="timeline-node">
+                    <div className="node-dot"></div>
+                  </div>
+
+                  {/* Logo */}
+                  <div className="entry-logo-panel">
+                    <img src={group.logo} alt={group.key} className="entry-logo-img" />
+                  </div>
                 </div>
-                <p className="description">{award.description}</p>
-                {(award.file || award.link) && (
-                  <div className="cert-link-wrapper">
-                    {award.file && (
-                      <a
-                        href={award.file}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cert-link"
-                        style={{ marginRight: '10px' }}
-                      >
-                        View File 1
-                      </a>
-                    )}
-                    {award.link && (
-                      <a
-                        href={award.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cert-link"
-                      >
-                        View File 2
-                      </a>
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}
@@ -470,21 +572,53 @@ function Portfolio() {
             <h2 className="section-number">04 | EXTRACURRICULAR</h2>
             <div className="section-divider"></div>
           </div>
-          <div className="experiences-scroll">
-            {extracurricular.map((item) => (
-              <div key={item.id} className="experience-card">
-                <div className="card-top">
-                  <div className="experience-header">
-                    <h3>{item.title}</h3>
-                    <span className="status-badge-exp status-category">
-                      {item.category}
-                    </span>
+          <div className="timeline-wrapper">
+            <div className="timeline-track"></div>
+            {extracurricular.map((item, index) => {
+              const isOdd = index % 2 === 0;
+              return (
+                <div
+                  key={item.id}
+                  className={`timeline-entry ${isOdd ? 'entry-odd' : 'entry-even'}`}
+                >
+                  {/* Details */}
+                  <div className="entry-details">
+                    <div className="entry-meta">
+                      <span className="entry-period">{item.period}</span>
+                      <span className="status-badge-exp status-category">{item.category}</span>
+                    </div>
+                    <h3 className="entry-title">{item.title}</h3>
+                    {item.orgLink ? (
+                      <a
+                        href={item.orgLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="entry-company entry-company-link"
+                      >
+                        {item.org} ↗
+                      </a>
+                    ) : (
+                      <p className="entry-company">{item.org}</p>
+                    )}
+                    <p className="entry-desc">{item.description}</p>
                   </div>
-                  <span className="period">{item.period}</span>
+
+                  {/* Center dot */}
+                  <div className="timeline-node">
+                    <div className="node-dot"></div>
+                  </div>
+
+                  {/* Logo / Photo */}
+                  <div className="entry-logo-panel">
+                    <img
+                      src={item.logo}
+                      alt={item.org}
+                      className={item.logoType === 'photo' ? 'entry-logo-circle' : 'entry-logo-img'}
+                    />
+                  </div>
                 </div>
-                <p className="description">{item.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}
@@ -497,19 +631,41 @@ function Portfolio() {
             <h2 className="section-number">05 | EVENTS</h2>
             <div className="section-divider"></div>
           </div>
-          <div className="experiences-scroll">
-            {events.map((event) => (
-              <div key={event.id} className="experience-card">
-                <div className="card-top">
-                  <div className="experience-header">
-                    <h3>{event.title}</h3>
+          <div className="timeline-wrapper">
+            <div className="timeline-track"></div>
+            {eventGroups.map((group, index) => {
+              const isOdd = index % 2 === 0;
+              return (
+                <div
+                  key={group.key}
+                  className={`timeline-entry ${isOdd ? 'entry-odd' : 'entry-even'}`}
+                >
+                  {/* Details — stacked if multiple events share the logo */}
+                  <div className="entry-details">
+                    <p className="entry-company" style={{ marginBottom: '1.2rem' }}>{group.organization}</p>
+                    {group.items.map((event, i) => (
+                      <div key={event.id} className={i > 0 ? 'award-stacked-item' : ''}>
+                        <div className="entry-meta">
+                          <span className="entry-period">{event.period}</span>
+                        </div>
+                        <h3 className="entry-title">{event.title}</h3>
+                        <p className="entry-desc">{event.description}</p>
+                      </div>
+                    ))}
                   </div>
-                  <span className="company">{event.organization}</span>
-                  <span className="period">{event.period}</span>
+
+                  {/* Center dot */}
+                  <div className="timeline-node">
+                    <div className="node-dot"></div>
+                  </div>
+
+                  {/* Logo */}
+                  <div className="entry-logo-panel">
+                    <img src={group.logo} alt={group.organization} className="entry-logo-img" />
+                  </div>
                 </div>
-                <p className="description">{event.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}

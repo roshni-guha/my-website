@@ -446,12 +446,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 220px;
+  min-height: 300px;
 }
 
 .entry-logo-img {
-  max-width: 380px;
-  max-height: 260px;
+  max-width: 100%;
+  max-height: 340px;
   width: 100%;
   object-fit: contain;
   filter: grayscale(0.1) opacity(0.88);
@@ -482,6 +482,38 @@
 
 .timeline-entry:hover .entry-logo-fallback {
   border-color: var(--gold);
+}
+
+/* ── Photo circle (non-logo images) ── */
+.entry-logo-circle {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(0.1) opacity(0.88);
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.entry-logo-circle:hover {
+  filter: grayscale(0) opacity(1);
+  transform: scale(1.04);
+}
+
+/* ── Org link ── */
+.entry-company-link {
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.entry-company-link:hover {
+  opacity: 0.7;
+}
+
+/* ── Stacked award items within a group ── */
+.award-stacked-item {
+  margin-top: 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--hairline);
 }
 
 /* ── Responsive ── */
@@ -551,6 +583,11 @@
   .entry-logo-img {
     max-width: 80px;
     max-height: 50px;
+  }
+
+  .entry-logo-circle {
+    width: 72px;
+    height: 72px;
   }
 
   .entry-logo-fallback {

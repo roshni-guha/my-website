@@ -15,7 +15,7 @@ function Projects() {
         { value: '60%', label: 'Training Time Cut' }
       ],
       links: [
-        { url: 'https://github.com/roshni-guha/trading-bot', label: 'View Code' },
+        { url: 'https://github.com/roshni-guha/rl-global-equity-model', label: 'View Code' },
       ]
     },
     {
