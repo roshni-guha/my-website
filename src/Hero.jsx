@@ -43,7 +43,7 @@ function Hero() {
             </div>
             <div className="credential-item">
               <h3 className="credential-title">GPA</h3>
-              <p className="credential-institution">3.84 / 4.0</p>
+              <p className="credential-institution">3.86 / 4.0</p>
             </div>
             <div className="credential-item">
               <h3 className="credential-title">Coursework</h3>
