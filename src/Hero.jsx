@@ -57,7 +57,7 @@ function Hero() {
 
           <div className="about-section">
             <p className="about-text">
-              I'm a sophomore at UW-Madison pursuing dual degrees in Computer Science and Mathematics.
+              I'm a junior at UW-Madison pursuing dual degrees in Computer Science and Mathematics.
               My passion lies at the intersection of software engineering, quantitative finance, and machine learning.
               I love building scalable systems, developing algorithmic trading strategies, and applying ML to solve real-world problems.
             </p>
